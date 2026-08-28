@@ -6,16 +6,26 @@
 
 <title>断食道場SHOP｜スーパーSALEの歩き方</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-
 <style>
+  /* ===== 数字・欧文用：LINE Seed JP（Latin/数字/記号のみサブセット同梱・OFL） ===== */
+  @font-face{
+    font-family:"LINE Seed JP";
+    font-style:normal; font-weight:400; font-display:swap;
+    src:url("fonts/line-seed-jp-num-Rg.woff2") format("woff2");
+    unicode-range:U+0020-007E,U+00A0,U+00D7,U+2013-2014,U+2018-201D,U+2026,U+2192,U+2197,U+2212,U+2500,U+FF0F;
+  }
+  @font-face{
+    font-family:"LINE Seed JP";
+    font-style:normal; font-weight:700; font-display:swap;
+    src:url("fonts/line-seed-jp-num-Bd.woff2") format("woff2");
+    unicode-range:U+0020-007E,U+00A0,U+00D7,U+2013-2014,U+2018-201D,U+2026,U+2192,U+2197,U+2212,U+2500,U+FF0F;
+  }
+
   :root{
-    /* ▼▼ フォントはあとで Web フォント指定に差し替え（この3つを変えれば全体に反映） ▼▼ */
-    --font-jp:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;      /* 日本語 本文 */
-    --font-accent:"Kaisei Opti","Zen Kaku Gothic New",serif;         /* 日本語 見出しアクセント */
-    --font-num:"Josefin Sans","Zen Kaku Gothic New",sans-serif;      /* 数字・欧文 */
+    /* ▼▼ フォント：本文・見出しは MS Pゴシック、数字・欧文は LINE Seed JP ▼▼ */
+    --font-jp:"MS PGothic","MS Pゴシック","Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;  /* 本文・見出し（MS Pゴシックが無い端末は近いゴシック体にフォールバック） */
+    --font-accent:var(--font-jp);                                    /* 見出しアクセント＝本文と同じ MS Pゴシック */
+    --font-num:"LINE Seed JP","MS PGothic","MS Pゴシック",sans-serif; /* 数字・欧文ラベル。日本語（曜日など）は自動で MS Pゴシックに */
 
     --pine:#1c3a30;         /* 深い緑：主背景 */
     --pine-2:#244a3d;

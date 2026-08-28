@@ -7,7 +7,9 @@
 - 1ファイル完結：`index.html` に CSS・JS をすべて内包
 - 中央1カラム `max-width:750px`、両脇は深緑の余白
 - 配色：深い緑 × 生成り × 酵素ドリンクの琥珀色（アクセント）／ 赤は「先着・締切」だけに限定／ ページ両脇の余白は薄いグリーン（`--gutter`）
-- フォント：`:root` の `--font-jp` / `--font-accent` / `--font-num` の3変数で一括管理。あとで Web フォント指定に差し替え予定（現状 Zen Kaku Gothic New / Kaisei Opti / Josefin Sans）
+- フォント：`:root` の `--font-jp` / `--font-accent` / `--font-num` の3変数で一括管理
+  - 本文・見出し（タイトル含む）＝ **MS Pゴシック**（`--font-jp` / `--font-accent`）。MS Pゴシックは Windows 専用のローカルフォントなので、スマホ（iOS/Android）など無い端末では Hiragino/Noto などのゴシック体にフォールバックします
+  - 数字・欧文ラベル＝ **LINE Seed JP**（`--font-num`）。`fonts/line-seed-jp-num-{Rg,Bd}.woff2` に Latin・数字・記号だけをサブセットして同梱（各約15KB、OFL）。曜日などの日本語は自動で MS Pゴシックに落ちます
 - 本文・キャプション類は大きめに設定（本文17.5px、キャプション15.5px 目安）
 - スクロールで静かに現れる演出付き。JSが無効／失敗しても内容は必ず表示される作り
 
