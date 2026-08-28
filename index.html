@@ -27,18 +27,22 @@
     --font-accent:var(--font-jp);                                    /* 見出しアクセント＝本文と同じ MS Pゴシック */
     --font-num:"LINE Seed JP","MS PGothic","MS Pゴシック",sans-serif; /* 数字・欧文ラベル。日本語（曜日など）は自動で MS Pゴシックに */
 
-    --pine:#1c3a30;         /* 深い緑：主背景 */
-    --pine-2:#244a3d;
-    --pine-line:#3b5f52;
-    --gutter:#e3ecdf;       /* 薄いグリーン：ページ両脇の余白 */
-    --cream:#f4efe3;        /* 生成り：明背景 */
-    --cream-2:#e8dfc8;
-    --amber:#c98a3c;        /* 酵素ドリンクの色：アクセント（feature背景・明背景の文字） */
-    --amber-lite:#dcab63;   /* 深緑の上にのせる小さな文字用（コントラスト確保） */
-    --amber-deep:#a86f28;
-    --ink:#233029;          /* 明背景の本文 */
-    --ink-dim:#5a6a60;
-    --alert:#b23b2e;        /* 先着・締切など緊急のみ */
+    /* ▼▼ 配色：ピンク＋イエローの美容・ダイエット系 ▼▼ */
+    --cream:#FBF7F2;        /* ほぼ白の生成り：明背景 */
+    --cream-2:#EFE4DA;      /* 生成りの罫線 */
+    --gutter:#F7EAEE;       /* 淡いピンク：ページ両脇の余白 */
+    --rose:#BE4767;         /* メインのピンク：明背景の見出し小・文字・ボタン */
+    --rose-deep:#8E3B52;    /* 深いローズ：feature/結び背景・強い見出し */
+    --rose-soft:#FCEAEF;    /* ピンクのセクション地色 */
+    --rose-line:#ECC9D3;    /* ピンク地の罫線 */
+    --rose-on-deep:#F5DEE4; /* 深ローズ地にのせる本文 */
+    --marigold:#B67816;     /* イエロー系アクセント（明背景で読める濃さ） */
+    --marigold-lite:#F4C65A;/* 深ローズ地にのせるイエロー */
+    --butter:#FDF4E1;       /* イエローのセクション地色 */
+    --butter-line:#EEDBB2;  /* イエロー地の罫線 */
+    --ink:#3E2E2E;          /* 温かみのある濃茶：本文 */
+    --ink-dim:#7A625E;      /* くすませた文字（本文サブ・キャプション） */
+    --alert:#D8503C;        /* 先着・締切など緊急のみ（朱） */
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -46,7 +50,7 @@
   body{
     margin:0;
     background:var(--gutter);
-    color:var(--cream);
+    color:var(--ink);
     font-family:var(--font-jp);
     -webkit-font-smoothing:antialiased;
     line-height:1.8;
@@ -55,67 +59,76 @@
   a{color:inherit;}
   .num{font-family:var(--font-num); font-variant-numeric:tabular-nums;}
 
-  /* ---- ページ枠：中央1カラム、両脇は薄いグリーンの余白 ---- */
-  .page{ max-width:750px; margin:0 auto; background:var(--pine); box-shadow:0 0 0 1px rgba(28,58,48,.06); }
+  /* ---- ページ枠：中央1カラム、両脇は淡いピンクの余白 ---- */
+  .page{ max-width:750px; margin:0 auto; background:var(--cream); box-shadow:0 0 40px rgba(142,59,82,.10); }
   .inner{ padding:0 30px; }
   @media (max-width:520px){ .inner{ padding:0 20px; } }
 
   /* ================= FV ================= */
-  .fv{ padding:88px 0 56px; }
+  .fv{
+    padding:92px 0 60px;
+    background:linear-gradient(160deg,#FCE6EC 0%,#FBEFDA 60%,#FCF5EC 100%);
+  }
   .fv .eyebrow{
     font-family:var(--font-num);
-    font-size:14px; font-weight:600; letter-spacing:.32em;
-    color:var(--amber-lite); margin:0 0 26px;
+    font-size:14px; font-weight:600; letter-spacing:.3em;
+    color:var(--rose); margin:0 0 24px;
+  }
+  .fv .eyebrow::before{
+    content:""; display:inline-block; width:26px; height:2px;
+    background:currentColor; vertical-align:middle; margin-right:12px; transform:translateY(-3px);
   }
   .fv h1{
     margin:0 0 30px;
     font-family:var(--font-accent); font-weight:700;
     font-size:clamp(40px,10.5vw,62px);
     line-height:1.5; letter-spacing:.02em;
+    color:var(--rose-deep);
   }
   .fv .lead{
     margin:0 0 34px; max-width:30em;
-    font-size:18.5px; color:var(--cream-2);
+    font-size:18.5px; color:var(--ink-dim);
   }
   .period{
-    border-top:1px solid var(--pine-line);
-    border-bottom:1px solid var(--pine-line);
+    border-top:1px solid var(--rose-line);
+    border-bottom:1px solid var(--rose-line);
     padding:20px 0;
   }
   .period .tag{
     display:block;
-    font-size:13px; letter-spacing:.18em; color:var(--amber-lite);
+    font-size:13px; letter-spacing:.18em; color:var(--rose);
     font-weight:700; margin-bottom:10px;
   }
   .period .range{
     font-family:var(--font-num); font-weight:600;
     font-size:clamp(26px,7vw,34px);
     display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px;
+    color:var(--rose-deep);
   }
-  .period .range small{ font-size:.52em; color:var(--cream-2); font-weight:500; }
-  .period .range .arrow{ color:var(--cream-2); }
+  .period .range small{ font-size:.52em; color:var(--ink-dim); font-weight:500; }
+  .period .range .arrow{ color:var(--rose); }
   .period .note{
-    margin:12px 0 0; font-size:15px; color:var(--cream-2); opacity:.9;
+    margin:12px 0 0; font-size:15px; color:var(--ink-dim);
   }
 
   /* ================= カレンダー画像 ================= */
   /* ▼▼ 後日、正式なSALEカレンダー画像に差し替え（images/calendar-poster.jpg など） ▼▼ */
-  .calendar{ margin-top:8px; border-top:1px solid var(--pine-line); border-bottom:1px solid var(--pine-line); }
-  .calendar img{ width:100%; }
+  .calendar{ margin:0; padding:26px 0; background:var(--cream); }
+  .calendar img{ width:100%; border-radius:16px; box-shadow:0 12px 34px rgba(142,59,82,.12); }
   .calendar figcaption{
     padding:16px 30px 0; font-size:15px; letter-spacing:.06em;
-    color:var(--cream-2); opacity:.82;
+    color:var(--ink-dim);
   }
 
   /* ================= ご案内（静的な目次） ================= */
-  .toc{ background:var(--cream); color:var(--ink); padding:38px 0 30px; }
+  .toc{ background:var(--cream); color:var(--ink); padding:40px 0 34px; }
   .toc .label{
     font-family:var(--font-num); font-size:12px; font-weight:700;
-    letter-spacing:.22em; color:var(--amber-deep); margin:0 0 6px;
+    letter-spacing:.22em; color:var(--rose); margin:0 0 6px;
   }
   .toc .lead{ margin:0 0 20px; font-size:16.5px; color:var(--ink-dim); }
-  .toc ol{ margin:0; padding:0; list-style:none; counter-reset:toc; border-top:1px solid var(--cream-2); }
-  .toc li{ counter-increment:toc; border-bottom:1px solid var(--cream-2); }
+  .toc ol{ margin:0; padding:0; list-style:none; counter-reset:toc; border-top:1px solid var(--rose-line); }
+  .toc li{ counter-increment:toc; border-bottom:1px solid var(--rose-line); }
   .toc a{
     display:flex; align-items:baseline; gap:10px; padding:16px 2px;
     text-decoration:none; color:var(--ink);
@@ -123,27 +136,32 @@
   .toc a::before{
     content:counter(toc,decimal-leading-zero);
     font-family:var(--font-num); font-weight:700; font-size:13px;
-    color:var(--amber-deep); flex-shrink:0;
+    color:var(--rose); flex-shrink:0;
   }
   .toc .when{ font-family:var(--font-num); font-weight:700; font-size:12.5px; letter-spacing:.02em; color:var(--ink-dim); flex-shrink:0; white-space:nowrap; }
   .toc .what{ flex:1; font-weight:700; font-size:15.5px; }
-  .toc a .go{ color:var(--amber-deep); flex-shrink:0; }
-  .toc a:hover .what{ color:var(--amber-deep); }
+  .toc a .go{ color:var(--rose); flex-shrink:0; }
+  .toc a:hover .what{ color:var(--rose); }
 
   /* ================= セクション共通 ================= */
-  .sec{ padding:64px 0; }
-  .sec.dark{ background:var(--pine); color:var(--cream); }
-  .sec.light{ background:var(--cream); color:var(--ink); }
-  .sec.feature{ background:var(--amber); color:#3a2a12; }
+  .sec{ padding:66px 0; }
+  .sec.cream{ background:var(--cream); color:var(--ink); }
+  .sec.pink{ background:var(--rose-soft); color:var(--ink); }
+  .sec.butter{ background:var(--butter); color:var(--ink); }
+  .sec.deep{ background:var(--rose-deep); color:var(--cream); }
+  .sec.feature{ background:linear-gradient(135deg,#FBE1E9 0%,#FBEFD4 100%); color:var(--ink); }
 
   .kicker{
     font-family:var(--font-num);
     font-size:13px; font-weight:600; letter-spacing:.24em;
     margin:0 0 18px;
   }
-  .sec.dark .kicker{ color:var(--amber-lite); }
-  .sec.light .kicker{ color:var(--amber-deep); }
-  .sec.feature .kicker{ color:#5c3f14; }
+  .kicker::before{
+    content:""; display:inline-block; width:24px; height:2px;
+    background:currentColor; vertical-align:middle; margin-right:12px; transform:translateY(-3px);
+  }
+  .sec.cream .kicker, .sec.pink .kicker, .sec.butter .kicker, .sec.feature .kicker{ color:var(--rose); }
+  .sec.deep .kicker{ color:var(--marigold-lite); }
 
   .datemark{
     display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 12px;
@@ -151,9 +169,9 @@
     border-bottom:1px solid currentColor;
     font-family:var(--font-num); font-weight:700;
   }
-  .sec.dark .datemark{ border-color:var(--pine-line); }
-  .sec.light .datemark{ border-color:var(--cream-2); }
-  .sec.feature .datemark{ border-color:rgba(58,42,18,.28); }
+  .sec.cream .datemark, .sec.pink .datemark, .sec.feature .datemark{ border-color:var(--rose-line); color:var(--rose-deep); }
+  .sec.butter .datemark{ border-color:var(--butter-line); color:var(--rose-deep); }
+  .sec.deep .datemark{ border-color:rgba(255,255,255,.28); color:var(--cream); }
   .datemark .big{ font-size:clamp(30px,8vw,42px); line-height:1; }
   .datemark .big .wd{ font-family:var(--font-jp); font-size:.42em; font-weight:600; margin-left:3px; }
   .datemark .big .arrow{ opacity:.55; margin:0 4px; }
@@ -165,90 +183,89 @@
     font-size:clamp(30px,8.4vw,44px);
     line-height:1.5; letter-spacing:.02em;
   }
+  .sec.cream h2, .sec.pink h2, .sec.butter h2, .sec.feature h2{ color:var(--rose-deep); }
+  .sec.deep h2{ color:var(--cream); }
   .sec p{ margin:0 0 22px; font-size:17.5px; max-width:32em; }
-  .sec.dark p{ color:var(--cream-2); }
-  .sec.light p{ color:var(--ink-dim); }
-  .sec.feature p{ color:#4a3616; }
+  .sec.cream p, .sec.pink p, .sec.butter p, .sec.feature p{ color:var(--ink-dim); }
+  .sec.deep p{ color:var(--rose-on-deep); }
 
-  .photo{ margin:26px 0; max-width:560px; }
-  .sec.dark .photo{ border:1px solid var(--pine-line); }
-  .sec.light .photo{ border:1px solid var(--cream-2); }
-  .sec.feature .photo{ border:1px solid rgba(58,42,18,.25); }
+  .photo{ margin:26px 0; max-width:560px; border-radius:16px; overflow:hidden; box-shadow:0 12px 34px rgba(142,59,82,.14); }
+  .sec.deep .photo{ box-shadow:0 12px 34px rgba(0,0,0,.22); }
   .photo + .photo-note{
-    margin-top:-12px; margin-bottom:26px;
-    font-size:15.5px; line-height:1.7; opacity:.85;
+    margin-top:14px; margin-bottom:26px;
+    font-size:15.5px; line-height:1.7; opacity:.9;
   }
 
   /* ---- 数字（割引率・名数） ---- */
   .stats{ display:flex; flex-wrap:wrap; gap:34px; margin:24px 0 28px; }
   .stat .k{ font-family:var(--font-num); font-size:12px; letter-spacing:.16em; opacity:.7; margin-bottom:6px; }
   .stat .v{ font-family:var(--font-num); font-weight:700; font-size:clamp(40px,11vw,58px); line-height:1; }
-  .sec.dark .stat .v{ color:var(--amber-lite); }
-  .sec.light .stat .v{ color:var(--amber-deep); }
+  .sec.cream .stat .v, .sec.pink .stat .v, .sec.feature .stat .v{ color:var(--rose); }
+  .sec.butter .stat .v{ color:var(--marigold); }
+  .sec.deep .stat .v{ color:var(--marigold-lite); }
   .stat .v .u{ font-family:var(--font-jp); font-size:.42em; font-weight:700; margin-left:2px; }
   .stat .v .alert{ color:var(--alert); }
 
   /* ---- 福袋カード（比較できる2商品なのでカードで整理） ---- */
   .bags{ display:flex; flex-direction:column; gap:16px; margin:26px 0 30px; }
-  .bag{ background:var(--cream); color:var(--ink); padding:24px 22px; border:1px solid rgba(58,42,18,.2); }
+  .bag{ background:#fff; color:var(--ink); padding:24px 22px; border-radius:16px; box-shadow:0 10px 30px rgba(142,59,82,.12); }
   @media (min-width:600px){
     .bags{ flex-direction:row; }
     .bag{ flex:1 1 0; }
   }
-  .bag .bname{ font-family:var(--font-accent); font-weight:700; font-size:21px; margin:0 0 6px; }
-  .bag .bprice{ font-family:var(--font-num); font-weight:700; font-size:34px; color:var(--amber-deep); line-height:1; margin-bottom:14px; }
+  .bag .bname{ font-family:var(--font-accent); font-weight:700; font-size:21px; margin:0 0 6px; color:var(--rose-deep); }
+  .bag .bprice{ font-family:var(--font-num); font-weight:700; font-size:34px; color:var(--rose); line-height:1; margin-bottom:14px; }
   .bag .bprice .u{ font-family:var(--font-jp); font-size:.44em; font-weight:700; margin-left:3px; }
   .bag ul{ margin:0; padding:0; list-style:none; }
   .bag li{ font-size:16px; color:var(--ink-dim); padding:6px 0 6px 18px; position:relative; }
-  .bag li::before{ content:""; position:absolute; left:0; top:15px; width:7px; height:7px; background:var(--amber); }
+  .bag li::before{ content:""; position:absolute; left:0; top:14px; width:8px; height:8px; border-radius:50%; background:var(--marigold-lite); }
 
-  /* ---- ポケット優光泉：重ねるクーポン ---- */
-  .ladder{ margin:26px 0 30px; border-top:1px solid var(--pine-line); }
+  /* ---- ポケット優光泉：重ねるクーポン（.sec.deep 上） ---- */
+  .ladder{ margin:26px 0 30px; border-top:1px solid rgba(255,255,255,.24); }
   .ladder .step{
     display:flex; align-items:baseline; gap:16px;
-    padding:18px 0; border-bottom:1px solid var(--pine-line);
+    padding:18px 0; border-bottom:1px solid rgba(255,255,255,.24);
   }
-  .ladder .no{ font-family:var(--font-num); font-weight:700; font-size:20px; color:var(--amber-lite); flex-shrink:0; width:2ch; }
-  .ladder .what{ flex:1; font-size:17px; color:var(--cream-2); }
-  .ladder .off{ font-family:var(--font-num); font-weight:700; font-size:clamp(24px,7vw,32px); color:var(--amber-lite); white-space:nowrap; }
+  .ladder .no{ font-family:var(--font-num); font-weight:700; font-size:20px; color:var(--marigold-lite); flex-shrink:0; width:2ch; }
+  .ladder .what{ flex:1; font-size:17px; color:var(--rose-on-deep); }
+  .ladder .off{ font-family:var(--font-num); font-weight:700; font-size:clamp(24px,7vw,32px); color:var(--marigold-lite); white-space:nowrap; }
   .ladder .off .u{ font-family:var(--font-jp); font-size:.5em; font-weight:700; margin-left:2px; }
 
-  /* ---- ボタン ---- */
+  /* ---- ボタン（ピル型） ---- */
   .cta{
     display:inline-block; text-decoration:none; font-weight:700; font-size:16px;
-    letter-spacing:.02em; padding:15px 26px; border:1.5px solid currentColor;
+    letter-spacing:.02em; padding:15px 28px; border:1.5px solid currentColor;
+    border-radius:999px; transition:background-color .2s ease, color .2s ease;
   }
-  .sec.dark .cta{ color:var(--amber-lite); }
-  .sec.dark .cta:hover{ background:var(--amber-lite); color:var(--pine); }
-  .sec.light .cta{ color:var(--amber-deep); }
-  .sec.light .cta:hover{ background:var(--amber-deep); color:var(--cream); }
-  .sec.feature .cta{ color:#3a2a12; }
-  .sec.feature .cta:hover{ background:#3a2a12; color:var(--amber); }
+  .sec.cream .cta, .sec.pink .cta, .sec.butter .cta, .sec.feature .cta{ color:var(--rose); }
+  .sec.cream .cta:hover, .sec.pink .cta:hover, .sec.butter .cta:hover, .sec.feature .cta:hover{ background:var(--rose); color:#fff; }
+  .sec.deep .cta{ color:var(--marigold-lite); }
+  .sec.deep .cta:hover{ background:var(--marigold-lite); color:var(--rose-deep); }
   .cta-row{ display:flex; flex-wrap:wrap; gap:12px; }
   .cta-row + .cta-row{ margin-top:12px; }
-  .cta.solid{ background:#3a2a12; color:var(--amber); border-color:#3a2a12; }
-  .cta.solid:hover{ opacity:.85; background:#3a2a12; color:var(--amber); }
+  .cta.solid{ background:var(--rose-deep); color:#fff; border-color:var(--rose-deep); }
+  .cta.solid:hover{ background:var(--rose); color:#fff; border-color:var(--rose); }
 
   /* ================= 結び ================= */
-  .closing{ background:var(--pine); padding:72px 0 48px; }
+  .closing{ background:var(--rose-deep); color:var(--cream); padding:76px 0 50px; }
   .closing h2{
-    margin:0 0 20px;
+    margin:0 0 20px; color:var(--cream);
     font-family:var(--font-accent); font-weight:700;
     font-size:clamp(28px,7.6vw,40px); line-height:1.5;
   }
-  .closing p{ margin:0 0 26px; color:var(--cream-2); font-size:17.5px; max-width:30em; }
+  .closing p{ margin:0 0 26px; color:var(--rose-on-deep); font-size:17.5px; max-width:30em; }
+  .closing .cta{ color:var(--marigold-lite); }
+  .closing .cta:hover{ background:var(--marigold-lite); color:var(--rose-deep); }
   .closing .fine{
-    margin-top:44px; padding-top:22px; border-top:1px solid var(--pine-line);
-    font-size:14px; color:var(--cream-2); opacity:.8; line-height:2.1;
+    margin-top:44px; padding-top:22px; border-top:1px solid rgba(255,255,255,.2);
+    font-size:14px; color:var(--rose-on-deep); opacity:.85; line-height:2.1;
   }
-  .closing .cta{ color:var(--amber-lite); }
-  .closing .cta:hover{ background:var(--amber-lite); color:var(--pine); }
 
   /* ================= SALE対象商品ラインナップ ================= */
-  .lineup{ background:var(--cream); color:var(--ink); padding:64px 0; }
-  .lineup > .inner > .kicker{ color:var(--amber-deep); }
+  .lineup{ background:var(--cream); color:var(--ink); padding:66px 0; }
+  .lineup > .inner > .kicker{ color:var(--rose); }
   .lineup h2{
-    margin:0 0 14px;
+    margin:0 0 14px; color:var(--rose-deep);
     font-family:var(--font-accent); font-weight:700;
     font-size:clamp(28px,7.6vw,40px); line-height:1.5;
   }
@@ -256,23 +273,25 @@
   .lg{ margin:0 0 40px; }
   .lg:last-of-type{ margin-bottom:8px; }
   .lg h3{
-    margin:0 0 6px; font-size:19px; font-weight:700; color:var(--ink);
+    margin:0 0 6px; font-size:19px; font-weight:700; color:var(--rose-deep);
     display:flex; align-items:baseline; gap:10px;
   }
-  .lg h3 .en{ font-family:var(--font-num); font-size:12px; font-weight:600; letter-spacing:.18em; color:var(--amber-deep); }
+  .lg h3 .en{ font-family:var(--font-num); font-size:12px; font-weight:600; letter-spacing:.18em; color:var(--rose); }
   .lg > p{ margin:0 0 18px; font-size:15.5px; color:var(--ink-dim); }
   .lg-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
   @media (min-width:600px){ .lg-grid{ grid-template-columns:repeat(3,1fr); gap:18px; } }
   .pcard{
     display:flex; flex-direction:column;
-    background:#fff; border:1px solid var(--cream-2); text-decoration:none; color:var(--ink);
+    background:#fff; border:1px solid var(--rose-line); border-radius:14px; overflow:hidden;
+    text-decoration:none; color:var(--ink);
+    box-shadow:0 6px 18px rgba(142,59,82,.08); transition:box-shadow .2s ease, border-color .2s ease;
   }
   .pcard img{ width:100%; aspect-ratio:1/1; object-fit:cover; }
-  .pcard .pc-body{ padding:12px 12px 14px; display:flex; flex-direction:column; flex:1; }
+  .pcard .pc-body{ padding:13px 13px 15px; display:flex; flex-direction:column; flex:1; }
   .pcard .pc-name{ font-size:15px; font-weight:700; line-height:1.55; }
   .pcard .pc-spec{ margin-top:6px; font-size:13.5px; line-height:1.65; color:var(--ink-dim); }
-  .pcard .pc-go{ margin-top:auto; padding-top:12px; font-family:var(--font-num); font-size:13px; font-weight:700; letter-spacing:.06em; color:var(--amber-deep); }
-  .pcard:hover{ border-color:var(--amber); }
+  .pcard .pc-go{ margin-top:auto; padding-top:12px; font-family:var(--font-num); font-size:13px; font-weight:700; letter-spacing:.06em; color:var(--rose); }
+  .pcard:hover{ border-color:var(--rose); box-shadow:0 12px 26px rgba(142,59,82,.16); }
   .pcard:hover .pc-go{ text-decoration:underline; }
 
   /* ---- スクロールで静かに現れる（JSが有効なときだけ）---- */
@@ -375,7 +394,7 @@
   </section>
 
   <!-- ================= 2. 前半 15%OFF ================= -->
-  <section class="sec dark" id="off15">
+  <section class="sec pink" id="off15">
     <div class="inner reveal">
       <p class="kicker">START DASH ─ 先着 200 名</p>
       <div class="datemark">
@@ -403,7 +422,7 @@
   </section>
 
   <!-- ================= 3. 後半 10%OFF ================= -->
-  <section class="sec light" id="off10">
+  <section class="sec butter" id="off10">
     <div class="inner reveal">
       <p class="kicker">AFTER 9/6</p>
       <div class="datemark">
@@ -430,7 +449,7 @@
   </section>
 
   <!-- ================= 4. ポケット優光泉 重ねるクーポン ================= -->
-  <section class="sec dark" id="pocket">
+  <section class="sec deep" id="pocket">
     <div class="inner reveal">
       <p class="kicker">POCKET YUKOSEN ─ SALE 期間中</p>
       <div class="datemark">
@@ -555,7 +574,7 @@
           </a>
         </div>
         <p style="margin-top:18px;font-size:15px;">
-          <a href="https://search.rakuten.co.jp/search/mall/%E3%82%BC%E3%83%AA%E3%83%BC/?sf=1&amp;sid=235929" target="_blank" rel="noopener" style="color:var(--amber-deep);font-weight:700;">酵素ゼリーの一覧を見る →</a>
+          <a href="https://search.rakuten.co.jp/search/mall/%E3%82%BC%E3%83%AA%E3%83%BC/?sf=1&amp;sid=235929" target="_blank" rel="noopener" style="color:var(--rose);font-weight:700;">酵素ゼリーの一覧を見る →</a>
         </p>
       </div>
     </div>
