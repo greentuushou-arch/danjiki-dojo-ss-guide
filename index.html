@@ -12,9 +12,15 @@
 
 <style>
   :root{
+    /* ▼▼ フォントはあとで Web フォント指定に差し替え（この3つを変えれば全体に反映） ▼▼ */
+    --font-jp:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;      /* 日本語 本文 */
+    --font-accent:"Kaisei Opti","Zen Kaku Gothic New",serif;         /* 日本語 見出しアクセント */
+    --font-num:"Josefin Sans","Zen Kaku Gothic New",sans-serif;      /* 数字・欧文 */
+
     --pine:#1c3a30;         /* 深い緑：主背景 */
     --pine-2:#244a3d;
     --pine-line:#3b5f52;
+    --gutter:#e3ecdf;       /* 薄いグリーン：ページ両脇の余白 */
     --cream:#f4efe3;        /* 生成り：明背景 */
     --cream-2:#e8dfc8;
     --amber:#c98a3c;        /* 酵素ドリンクの色：アクセント（feature背景・明背景の文字） */
@@ -29,37 +35,37 @@
   @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
   body{
     margin:0;
-    background:var(--pine);
+    background:var(--gutter);
     color:var(--cream);
-    font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;
+    font-family:var(--font-jp);
     -webkit-font-smoothing:antialiased;
-    line-height:1.75;
+    line-height:1.8;
   }
   img{max-width:100%; height:auto; display:block;}
   a{color:inherit;}
-  .num{font-family:"Josefin Sans","Zen Kaku Gothic New",sans-serif; font-variant-numeric:tabular-nums;}
+  .num{font-family:var(--font-num); font-variant-numeric:tabular-nums;}
 
-  /* ---- ページ枠：中央1カラム、両脇は深緑の余白 ---- */
-  .page{ max-width:750px; margin:0 auto; background:var(--pine); }
+  /* ---- ページ枠：中央1カラム、両脇は薄いグリーンの余白 ---- */
+  .page{ max-width:750px; margin:0 auto; background:var(--pine); box-shadow:0 0 0 1px rgba(28,58,48,.06); }
   .inner{ padding:0 30px; }
   @media (max-width:520px){ .inner{ padding:0 20px; } }
 
   /* ================= FV ================= */
   .fv{ padding:88px 0 56px; }
   .fv .eyebrow{
-    font-family:"Josefin Sans",sans-serif;
+    font-family:var(--font-num);
     font-size:14px; font-weight:600; letter-spacing:.32em;
     color:var(--amber-lite); margin:0 0 26px;
   }
   .fv h1{
     margin:0 0 30px;
-    font-family:"Kaisei Opti",serif; font-weight:700;
+    font-family:var(--font-accent); font-weight:700;
     font-size:clamp(40px,10.5vw,62px);
     line-height:1.5; letter-spacing:.02em;
   }
   .fv .lead{
     margin:0 0 34px; max-width:30em;
-    font-size:17px; color:var(--cream-2);
+    font-size:18.5px; color:var(--cream-2);
   }
   .period{
     border-top:1px solid var(--pine-line);
@@ -72,14 +78,14 @@
     font-weight:700; margin-bottom:10px;
   }
   .period .range{
-    font-family:"Josefin Sans",sans-serif; font-weight:600;
+    font-family:var(--font-num); font-weight:600;
     font-size:clamp(26px,7vw,34px);
     display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px;
   }
   .period .range small{ font-size:.52em; color:var(--cream-2); font-weight:500; }
   .period .range .arrow{ color:var(--cream-2); }
   .period .note{
-    margin:12px 0 0; font-size:13.5px; color:var(--cream-2); opacity:.85;
+    margin:12px 0 0; font-size:15px; color:var(--cream-2); opacity:.9;
   }
 
   /* ================= カレンダー画像 ================= */
@@ -87,17 +93,17 @@
   .calendar{ margin-top:8px; border-top:1px solid var(--pine-line); border-bottom:1px solid var(--pine-line); }
   .calendar img{ width:100%; }
   .calendar figcaption{
-    padding:14px 30px 0; font-size:13px; letter-spacing:.1em;
-    color:var(--cream-2); opacity:.7;
+    padding:16px 30px 0; font-size:15px; letter-spacing:.06em;
+    color:var(--cream-2); opacity:.82;
   }
 
   /* ================= ご案内（静的な目次） ================= */
   .toc{ background:var(--cream); color:var(--ink); padding:38px 0 30px; }
   .toc .label{
-    font-family:"Josefin Sans",sans-serif; font-size:12px; font-weight:700;
+    font-family:var(--font-num); font-size:12px; font-weight:700;
     letter-spacing:.22em; color:var(--amber-deep); margin:0 0 6px;
   }
-  .toc .lead{ margin:0 0 20px; font-size:15px; color:var(--ink-dim); }
+  .toc .lead{ margin:0 0 20px; font-size:16.5px; color:var(--ink-dim); }
   .toc ol{ margin:0; padding:0; list-style:none; counter-reset:toc; border-top:1px solid var(--cream-2); }
   .toc li{ counter-increment:toc; border-bottom:1px solid var(--cream-2); }
   .toc a{
@@ -106,10 +112,10 @@
   }
   .toc a::before{
     content:counter(toc,decimal-leading-zero);
-    font-family:"Josefin Sans",sans-serif; font-weight:700; font-size:13px;
+    font-family:var(--font-num); font-weight:700; font-size:13px;
     color:var(--amber-deep); flex-shrink:0;
   }
-  .toc .when{ font-family:"Josefin Sans",sans-serif; font-weight:700; font-size:12.5px; letter-spacing:.02em; color:var(--ink-dim); flex-shrink:0; white-space:nowrap; }
+  .toc .when{ font-family:var(--font-num); font-weight:700; font-size:12.5px; letter-spacing:.02em; color:var(--ink-dim); flex-shrink:0; white-space:nowrap; }
   .toc .what{ flex:1; font-weight:700; font-size:15.5px; }
   .toc a .go{ color:var(--amber-deep); flex-shrink:0; }
   .toc a:hover .what{ color:var(--amber-deep); }
@@ -121,7 +127,7 @@
   .sec.feature{ background:var(--amber); color:#3a2a12; }
 
   .kicker{
-    font-family:"Josefin Sans",sans-serif;
+    font-family:var(--font-num);
     font-size:13px; font-weight:600; letter-spacing:.24em;
     margin:0 0 18px;
   }
@@ -133,23 +139,23 @@
     display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 12px;
     margin:0 0 20px; padding-bottom:16px;
     border-bottom:1px solid currentColor;
-    font-family:"Josefin Sans",sans-serif; font-weight:700;
+    font-family:var(--font-num); font-weight:700;
   }
   .sec.dark .datemark{ border-color:var(--pine-line); }
   .sec.light .datemark{ border-color:var(--cream-2); }
   .sec.feature .datemark{ border-color:rgba(58,42,18,.28); }
   .datemark .big{ font-size:clamp(30px,8vw,42px); line-height:1; }
-  .datemark .big .wd{ font-family:"Zen Kaku Gothic New",sans-serif; font-size:.42em; font-weight:600; margin-left:3px; }
+  .datemark .big .wd{ font-family:var(--font-jp); font-size:.42em; font-weight:600; margin-left:3px; }
   .datemark .big .arrow{ opacity:.55; margin:0 4px; }
-  .datemark .time{ font-size:15px; opacity:.7; }
+  .datemark .time{ font-size:16.5px; opacity:.75; }
 
   .sec h2{
     margin:0 0 20px;
-    font-family:"Kaisei Opti",serif; font-weight:700;
+    font-family:var(--font-accent); font-weight:700;
     font-size:clamp(30px,8.4vw,44px);
     line-height:1.5; letter-spacing:.02em;
   }
-  .sec p{ margin:0 0 22px; font-size:16px; max-width:32em; }
+  .sec p{ margin:0 0 22px; font-size:17.5px; max-width:32em; }
   .sec.dark p{ color:var(--cream-2); }
   .sec.light p{ color:var(--ink-dim); }
   .sec.feature p{ color:#4a3616; }
@@ -159,17 +165,17 @@
   .sec.light .photo{ border:1px solid var(--cream-2); }
   .sec.feature .photo{ border:1px solid rgba(58,42,18,.25); }
   .photo + .photo-note{
-    margin-top:-14px; margin-bottom:24px;
-    font-size:13px; letter-spacing:.06em; opacity:.7;
+    margin-top:-12px; margin-bottom:26px;
+    font-size:15.5px; line-height:1.7; opacity:.85;
   }
 
   /* ---- 数字（割引率・名数） ---- */
   .stats{ display:flex; flex-wrap:wrap; gap:34px; margin:24px 0 28px; }
-  .stat .k{ font-family:"Josefin Sans",sans-serif; font-size:12px; letter-spacing:.16em; opacity:.7; margin-bottom:6px; }
-  .stat .v{ font-family:"Josefin Sans",sans-serif; font-weight:700; font-size:clamp(40px,11vw,58px); line-height:1; }
+  .stat .k{ font-family:var(--font-num); font-size:12px; letter-spacing:.16em; opacity:.7; margin-bottom:6px; }
+  .stat .v{ font-family:var(--font-num); font-weight:700; font-size:clamp(40px,11vw,58px); line-height:1; }
   .sec.dark .stat .v{ color:var(--amber-lite); }
   .sec.light .stat .v{ color:var(--amber-deep); }
-  .stat .v .u{ font-family:"Zen Kaku Gothic New",sans-serif; font-size:.42em; font-weight:700; margin-left:2px; }
+  .stat .v .u{ font-family:var(--font-jp); font-size:.42em; font-weight:700; margin-left:2px; }
   .stat .v .alert{ color:var(--alert); }
 
   /* ---- 福袋カード（比較できる2商品なのでカードで整理） ---- */
@@ -179,12 +185,12 @@
     .bags{ flex-direction:row; }
     .bag{ flex:1 1 0; }
   }
-  .bag .bname{ font-family:"Kaisei Opti",serif; font-weight:700; font-size:21px; margin:0 0 6px; }
-  .bag .bprice{ font-family:"Josefin Sans",sans-serif; font-weight:700; font-size:34px; color:var(--amber-deep); line-height:1; margin-bottom:14px; }
-  .bag .bprice .u{ font-family:"Zen Kaku Gothic New",sans-serif; font-size:.44em; font-weight:700; margin-left:3px; }
+  .bag .bname{ font-family:var(--font-accent); font-weight:700; font-size:21px; margin:0 0 6px; }
+  .bag .bprice{ font-family:var(--font-num); font-weight:700; font-size:34px; color:var(--amber-deep); line-height:1; margin-bottom:14px; }
+  .bag .bprice .u{ font-family:var(--font-jp); font-size:.44em; font-weight:700; margin-left:3px; }
   .bag ul{ margin:0; padding:0; list-style:none; }
-  .bag li{ font-size:14.5px; color:var(--ink-dim); padding:5px 0 5px 18px; position:relative; }
-  .bag li::before{ content:""; position:absolute; left:0; top:13px; width:7px; height:7px; background:var(--amber); }
+  .bag li{ font-size:16px; color:var(--ink-dim); padding:6px 0 6px 18px; position:relative; }
+  .bag li::before{ content:""; position:absolute; left:0; top:15px; width:7px; height:7px; background:var(--amber); }
 
   /* ---- ポケット優光泉：重ねるクーポン ---- */
   .ladder{ margin:26px 0 30px; border-top:1px solid var(--pine-line); }
@@ -192,10 +198,10 @@
     display:flex; align-items:baseline; gap:16px;
     padding:18px 0; border-bottom:1px solid var(--pine-line);
   }
-  .ladder .no{ font-family:"Josefin Sans",sans-serif; font-weight:700; font-size:20px; color:var(--amber-lite); flex-shrink:0; width:2ch; }
-  .ladder .what{ flex:1; font-size:15.5px; color:var(--cream-2); }
-  .ladder .off{ font-family:"Josefin Sans",sans-serif; font-weight:700; font-size:clamp(24px,7vw,32px); color:var(--amber-lite); white-space:nowrap; }
-  .ladder .off .u{ font-family:"Zen Kaku Gothic New",sans-serif; font-size:.5em; font-weight:700; margin-left:2px; }
+  .ladder .no{ font-family:var(--font-num); font-weight:700; font-size:20px; color:var(--amber-lite); flex-shrink:0; width:2ch; }
+  .ladder .what{ flex:1; font-size:17px; color:var(--cream-2); }
+  .ladder .off{ font-family:var(--font-num); font-weight:700; font-size:clamp(24px,7vw,32px); color:var(--amber-lite); white-space:nowrap; }
+  .ladder .off .u{ font-family:var(--font-jp); font-size:.5em; font-weight:700; margin-left:2px; }
 
   /* ---- ボタン ---- */
   .cta{
@@ -217,16 +223,47 @@
   .closing{ background:var(--pine); padding:72px 0 48px; }
   .closing h2{
     margin:0 0 20px;
-    font-family:"Kaisei Opti",serif; font-weight:700;
+    font-family:var(--font-accent); font-weight:700;
     font-size:clamp(28px,7.6vw,40px); line-height:1.5;
   }
-  .closing p{ margin:0 0 26px; color:var(--cream-2); font-size:16px; max-width:30em; }
+  .closing p{ margin:0 0 26px; color:var(--cream-2); font-size:17.5px; max-width:30em; }
   .closing .fine{
     margin-top:44px; padding-top:22px; border-top:1px solid var(--pine-line);
-    font-size:12.5px; color:var(--cream-2); opacity:.7; line-height:2;
+    font-size:14px; color:var(--cream-2); opacity:.8; line-height:2.1;
   }
   .closing .cta{ color:var(--amber-lite); }
   .closing .cta:hover{ background:var(--amber-lite); color:var(--pine); }
+
+  /* ================= SALE対象商品ラインナップ ================= */
+  .lineup{ background:var(--cream); color:var(--ink); padding:64px 0; }
+  .lineup > .inner > .kicker{ color:var(--amber-deep); }
+  .lineup h2{
+    margin:0 0 14px;
+    font-family:var(--font-accent); font-weight:700;
+    font-size:clamp(28px,7.6vw,40px); line-height:1.5;
+  }
+  .lineup > .inner > p{ margin:0 0 30px; font-size:17px; color:var(--ink-dim); max-width:32em; }
+  .lg{ margin:0 0 40px; }
+  .lg:last-of-type{ margin-bottom:8px; }
+  .lg h3{
+    margin:0 0 6px; font-size:19px; font-weight:700; color:var(--ink);
+    display:flex; align-items:baseline; gap:10px;
+  }
+  .lg h3 .en{ font-family:var(--font-num); font-size:12px; font-weight:600; letter-spacing:.18em; color:var(--amber-deep); }
+  .lg > p{ margin:0 0 18px; font-size:15.5px; color:var(--ink-dim); }
+  .lg-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  @media (min-width:600px){ .lg-grid{ grid-template-columns:repeat(3,1fr); gap:18px; } }
+  .pcard{
+    display:flex; flex-direction:column;
+    background:#fff; border:1px solid var(--cream-2); text-decoration:none; color:var(--ink);
+  }
+  .pcard img{ width:100%; aspect-ratio:1/1; object-fit:cover; }
+  .pcard .pc-body{ padding:12px 12px 14px; display:flex; flex-direction:column; flex:1; }
+  .pcard .pc-name{ font-size:15px; font-weight:700; line-height:1.55; }
+  .pcard .pc-spec{ margin-top:6px; font-size:13.5px; line-height:1.65; color:var(--ink-dim); }
+  .pcard .pc-go{ margin-top:auto; padding-top:12px; font-family:var(--font-num); font-size:13px; font-weight:700; letter-spacing:.06em; color:var(--amber-deep); }
+  .pcard:hover{ border-color:var(--amber); }
+  .pcard:hover .pc-go{ text-decoration:underline; }
 
   /* ---- スクロールで静かに現れる（JSが有効なときだけ）---- */
   /* 既定は完全表示。JSが .js-anim を付けたときだけ隠してから出す */
@@ -269,12 +306,13 @@
   <nav class="toc" aria-label="このページのご案内">
     <div class="inner">
       <p class="label">GUIDE</p>
-      <p class="lead">今回のSALEで用意しているのは、次の4つです。</p>
+      <p class="lead">今回のSALEで用意しているのは、次のとおりです。</p>
       <ol>
         <li><a href="#fukubukuro"><span class="when num">9/3–6</span><span class="what">サブローの日 限定福袋</span><span class="go">→</span></a></li>
         <li><a href="#off15"><span class="when num">9/3–5</span><span class="what">前半 15%OFF</span><span class="go">→</span></a></li>
         <li><a href="#off10"><span class="when num">9/6–11</span><span class="what">後半 10%OFF</span><span class="go">→</span></a></li>
         <li><a href="#pocket"><span class="when num">期間中</span><span class="what">ポケット優光泉クーポン</span><span class="go">→</span></a></li>
+        <li><a href="#lineup"><span class="when num">対象商品</span><span class="what">優光泉ラインナップ</span><span class="go">→</span></a></li>
       </ol>
     </div>
   </nav>
@@ -424,6 +462,95 @@
     </div>
   </section>
 
+  <!-- ================= SALE対象商品ラインナップ ================= -->
+  <section class="sec lineup" id="lineup">
+    <div class="inner reveal">
+      <p class="kicker">LINEUP</p>
+      <h2>SALEで狙う<br>優光泉ラインナップ</h2>
+      <p>前半15%OFF・後半10%OFFクーポンの対象は、下の優光泉シリーズが中心です。SALE会場ページに並んでいる商品を、タイプ別にまとめました。</p>
+
+      <div class="lg">
+        <h3>ボトル（600ml）<span class="en">BOTTLE</span></h3>
+        <p>定番の大容量タイプ。水や炭酸で5〜6倍にうすめて、朝食の置き換えや16時間断食のお供に。</p>
+        <div class="lg-grid">
+          <a class="pcard" href="https://item.rakuten.co.jp/danjiki-dojo/0090/" target="_blank" rel="noopener">
+            <img src="images/items/0090.jpg" alt="優光泉 スタンダード／梅 ボトル 600ml" loading="lazy">
+            <span class="pc-body"><span class="pc-name">優光泉 ボトル 600ml</span><span class="pc-spec">スタンダード／梅から選択</span><span class="pc-go">商品ページ →</span></span>
+          </a>
+          <a class="pcard" href="https://item.rakuten.co.jp/danjiki-dojo/7001/" target="_blank" rel="noopener">
+            <img src="images/items/7001.jpg" alt="優光泉 みかん味 ボトル 600ml" loading="lazy">
+            <span class="pc-body"><span class="pc-name">優光泉 みかん味 ボトル 600ml</span><span class="pc-spec">やさしい甘さで続けやすい</span><span class="pc-go">商品ページ →</span></span>
+          </a>
+          <a class="pcard" href="https://item.rakuten.co.jp/danjiki-dojo/7002/" target="_blank" rel="noopener">
+            <img src="images/items/7002.jpg" alt="優光泉 みかん味 ボトル 600ml 2本セット" loading="lazy">
+            <span class="pc-body"><span class="pc-name">優光泉 みかん味 ボトル 600ml×2本</span><span class="pc-spec">みかん味のまとめ買い</span><span class="pc-go">商品ページ →</span></span>
+          </a>
+          <a class="pcard" href="https://item.rakuten.co.jp/danjiki-dojo/0037_1/" target="_blank" rel="noopener">
+            <img src="images/items/0037_1.jpg" alt="優光泉 濃縮和漢発酵 ボトル 600ml" loading="lazy">
+            <span class="pc-body"><span class="pc-name">優光泉 濃縮和漢発酵 ボトル 600ml</span><span class="pc-spec">ハトムギ・発芽玄米・高麗人参など配合</span><span class="pc-go">商品ページ →</span></span>
+          </a>
+          <a class="pcard" href="https://item.rakuten.co.jp/danjiki-dojo/0037_2/" target="_blank" rel="noopener">
+            <img src="images/items/0037_2.jpg" alt="優光泉 濃縮和漢発酵 ボトル 600ml 2本セット" loading="lazy">
+            <span class="pc-body"><span class="pc-name">優光泉 濃縮和漢発酵 ボトル 600ml×2本</span><span class="pc-spec">和漢タイプの2本セット</span><span class="pc-go">商品ページ →</span></span>
+          </a>
+          <a class="pcard" href="https://item.rakuten.co.jp/danjiki-dojo/0064/" target="_blank" rel="noopener">
+            <img src="images/items/0064.jpg" alt="優光泉 ザクローズ ボトル 600ml 2本セット" loading="lazy">
+            <span class="pc-body"><span class="pc-name">優光泉 ザクローズ ボトル 600ml×2本</span><span class="pc-spec">ザクロ由来。美容を意識した習慣に</span><span class="pc-go">商品ページ →</span></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg">
+        <h3>ポケット優光泉（個包装スティック）<span class="en">STICK</span></h3>
+        <p>1包20mlの個包装。持ち運べるので、外出や旅行中のファスティングにも。重ねクーポンの対象は15包シリーズです。</p>
+        <div class="lg-grid">
+          <a class="pcard" href="https://item.rakuten.co.jp/danjiki-dojo/1000/" target="_blank" rel="noopener">
+            <img src="images/items/1000.jpg" alt="ポケット優光泉 20ml×6包" loading="lazy">
+            <span class="pc-body"><span class="pc-name">ポケット優光泉 20ml×6包</span><span class="pc-spec">スタンダード／梅／ザクローズ／濃縮和漢から選択</span><span class="pc-go">商品ページ →</span></span>
+          </a>
+          <a class="pcard" href="https://item.rakuten.co.jp/danjiki-dojo/0002/" target="_blank" rel="noopener">
+            <img src="images/items/0002.jpg" alt="ポケット優光泉 16時間ダイエットセット 20ml×15包" loading="lazy">
+            <span class="pc-body"><span class="pc-name">ポケット優光泉 16時間ダイエットセット 20ml×15包</span><span class="pc-spec">スタンダード／梅・約1週間分</span><span class="pc-go">商品ページ →</span></span>
+          </a>
+          <a class="pcard" href="https://item.rakuten.co.jp/danjiki-dojo/0046/" target="_blank" rel="noopener">
+            <img src="images/items/0046.jpg" alt="ポケット優光泉 濃縮和漢発酵 20ml×15包" loading="lazy">
+            <span class="pc-body"><span class="pc-name">ポケット優光泉 濃縮和漢発酵 20ml×15包</span><span class="pc-spec">和漢タイプ・約1週間分</span><span class="pc-go">商品ページ →</span></span>
+          </a>
+          <a class="pcard" href="https://item.rakuten.co.jp/danjiki-dojo/0058/" target="_blank" rel="noopener">
+            <img src="images/items/0058.jpg" alt="ポケット優光泉 ザクローズ 20ml×15包" loading="lazy">
+            <span class="pc-body"><span class="pc-name">ポケット優光泉 ザクローズ 20ml×15包</span><span class="pc-spec">ザクロタイプ・約1週間分</span><span class="pc-go">商品ページ →</span></span>
+          </a>
+          <a class="pcard" href="https://item.rakuten.co.jp/danjiki-dojo/7003/" target="_blank" rel="noopener">
+            <img src="images/items/7003.jpg" alt="ポケット優光泉 みかん味 20ml×15包" loading="lazy">
+            <span class="pc-body"><span class="pc-name">ポケット優光泉 みかん味 20ml×15包</span><span class="pc-spec">みかん味・約1週間分</span><span class="pc-go">商品ページ →</span></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg">
+        <h3>タブレット・ゼリー・入浴剤<span class="en">OTHERS</span></h3>
+        <p>ドリンク以外のアイテムもSALE対象です。</p>
+        <div class="lg-grid">
+          <a class="pcard" href="https://item.rakuten.co.jp/danjiki-dojo/5557/" target="_blank" rel="noopener">
+            <img src="images/items/5557.jpg" alt="くわタブレット 150粒" loading="lazy">
+            <span class="pc-body"><span class="pc-name">くわタブレット 150粒</span><span class="pc-spec">30日分・機能性表示食品／有胞子性乳酸菌＋桑の葉</span><span class="pc-go">商品ページ →</span></span>
+          </a>
+          <a class="pcard" href="https://item.rakuten.co.jp/danjiki-dojo/4001/" target="_blank" rel="noopener">
+            <img src="images/items/4001.jpg" alt="酵素ゼリー 優光泉 お試し 6包 みかん味" loading="lazy">
+            <span class="pc-body"><span class="pc-name">酵素ゼリー 優光泉 お試し 6包</span><span class="pc-spec">みかん味・かんで食べる酵素。間食がわりに</span><span class="pc-go">商品ページ →</span></span>
+          </a>
+          <a class="pcard" href="https://item.rakuten.co.jp/danjiki-dojo/0040/" target="_blank" rel="noopener">
+            <img src="images/items/0040.jpg" alt="薬用酵素入浴剤 バスクレンチーム26" loading="lazy">
+            <span class="pc-body"><span class="pc-name">薬用酵素入浴剤 バスクレンチーム26</span><span class="pc-spec">40〜48日分・パパイン酵素配合</span><span class="pc-go">商品ページ →</span></span>
+          </a>
+        </div>
+        <p style="margin-top:18px;font-size:15px;">
+          <a href="https://search.rakuten.co.jp/search/mall/%E3%82%BC%E3%83%AA%E3%83%BC/?sf=1&amp;sid=235929" target="_blank" rel="noopener" style="color:var(--amber-deep);font-weight:700;">酵素ゼリーの一覧を見る →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= 結び ================= -->
   <footer class="closing">
     <div class="inner reveal">
@@ -432,6 +559,9 @@
       <div class="cta-row">
         <a class="cta" href="https://www.rakuten.co.jp/danjiki-dojo/" target="_blank" rel="noopener">断食道場SHOP トップ ↗</a>
         <a class="cta" href="https://www.rakuten.ne.jp/gold/danjiki-dojo/event/201712/20260904_sale15off.html" target="_blank" rel="noopener">SALE会場ページ ↗</a>
+      </div>
+      <div class="cta-row">
+        <a class="cta" href="https://event.rakuten.co.jp/campaign/supersale/" target="_blank" rel="noopener">楽天スーパーSALE 会場 ↗</a>
       </div>
       <p class="fine">
         ※ 定期購入はポイント・クーポンの対象外です。<br>
