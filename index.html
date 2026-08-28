@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>断食道場SHOP｜スーパーSALEの歩き方</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --pine:#1c3a30;         /* 深い緑：主背景 */
+    --pine-2:#244a3d;
+    --pine-line:#3b5f52;
+    --cream:#f4efe3;        /* 生成り：明背景 */
+    --cream-2:#e8dfc8;
+    --amber:#c98a3c;        /* 酵素ドリンクの色：アクセント（feature背景・明背景の文字） */
+    --amber-lite:#dcab63;   /* 深緑の上にのせる小さな文字用（コントラスト確保） */
+    --amber-deep:#a86f28;
+    --ink:#233029;          /* 明背景の本文 */
+    --ink-dim:#5a6a60;
+    --alert:#b23b2e;        /* 先着・締切など緊急のみ */
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
+  body{
+    margin:0;
+    background:var(--pine);
+    color:var(--cream);
+    font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.75;
+  }
+  img{max-width:100%; height:auto; display:block;}
+  a{color:inherit;}
+  .num{font-family:"Josefin Sans","Zen Kaku Gothic New",sans-serif; font-variant-numeric:tabular-nums;}
+
+  /* ---- ページ枠：中央1カラム、両脇は深緑の余白 ---- */
+  .page{ max-width:750px; margin:0 auto; background:var(--pine); }
+  .inner{ padding:0 30px; }
+  @media (max-width:520px){ .inner{ padding:0 20px; } }
+
+  /* ================= FV ================= */
+  .fv{ padding:88px 0 56px; }
+  .fv .eyebrow{
+    font-family:"Josefin Sans",sans-serif;
+    font-size:14px; font-weight:600; letter-spacing:.32em;
+    color:var(--amber-lite); margin:0 0 26px;
+  }
+  .fv h1{
+    margin:0 0 30px;
+    font-family:"Kaisei Opti",serif; font-weight:700;
+    font-size:clamp(40px,10.5vw,62px);
+    line-height:1.5; letter-spacing:.02em;
+  }
+  .fv .lead{
+    margin:0 0 34px; max-width:30em;
+    font-size:17px; color:var(--cream-2);
+  }
+  .period{
+    border-top:1px solid var(--pine-line);
+    border-bottom:1px solid var(--pine-line);
+    padding:20px 0;
+  }
+  .period .tag{
+    display:block;
+    font-size:13px; letter-spacing:.18em; color:var(--amber-lite);
+    font-weight:700; margin-bottom:10px;
+  }
+  .period .range{
+    font-family:"Josefin Sans",sans-serif; font-weight:600;
+    font-size:clamp(26px,7vw,34px);
+    display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px;
+  }
+  .period .range small{ font-size:.52em; color:var(--cream-2); font-weight:500; }
+  .period .range .arrow{ color:var(--cream-2); }
+  .period .note{
+    margin:12px 0 0; font-size:13.5px; color:var(--cream-2); opacity:.85;
+  }
+
+  /* ================= カレンダー画像 ================= */
+  /* ▼▼ 後日、正式なSALEカレンダー画像に差し替え（images/calendar-poster.jpg など） ▼▼ */
+  .calendar{ margin-top:8px; border-top:1px solid var(--pine-line); border-bottom:1px solid var(--pine-line); }
+  .calendar img{ width:100%; }
+  .calendar figcaption{
+    padding:14px 30px 0; font-size:13px; letter-spacing:.1em;
+    color:var(--cream-2); opacity:.7;
+  }
+
+  /* ================= ご案内（静的な目次） ================= */
+  .toc{ background:var(--cream); color:var(--ink); padding:38px 0 30px; }
+  .toc .label{
+    font-family:"Josefin Sans",sans-serif; font-size:12px; font-weight:700;
+    letter-spacing:.22em; color:var(--amber-deep); margin:0 0 6px;
+  }
+  .toc .lead{ margin:0 0 20px; font-size:15px; color:var(--ink-dim); }
+  .toc ol{ margin:0; padding:0; list-style:none; counter-reset:toc; border-top:1px solid var(--cream-2); }
+  .toc li{ counter-increment:toc; border-bottom:1px solid var(--cream-2); }
+  .toc a{
+    display:flex; align-items:baseline; gap:10px; padding:16px 2px;
+    text-decoration:none; color:var(--ink);
+  }
+  .toc a::before{
+    content:counter(toc,decimal-leading-zero);
+    font-family:"Josefin Sans",sans-serif; font-weight:700; font-size:13px;
+    color:var(--amber-deep); flex-shrink:0;
+  }
+  .toc .when{ font-family:"Josefin Sans",sans-serif; font-weight:700; font-size:12.5px; letter-spacing:.02em; color:var(--ink-dim); flex-shrink:0; white-space:nowrap; }
+  .toc .what{ flex:1; font-weight:700; font-size:15.5px; }
+  .toc a .go{ color:var(--amber-deep); flex-shrink:0; }
+  .toc a:hover .what{ color:var(--amber-deep); }
+
+  /* ================= セクション共通 ================= */
+  .sec{ padding:64px 0; }
+  .sec.dark{ background:var(--pine); color:var(--cream); }
+  .sec.light{ background:var(--cream); color:var(--ink); }
+  .sec.feature{ background:var(--amber); color:#3a2a12; }
+
+  .kicker{
+    font-family:"Josefin Sans",sans-serif;
+    font-size:13px; font-weight:600; letter-spacing:.24em;
+    margin:0 0 18px;
+  }
+  .sec.dark .kicker{ color:var(--amber-lite); }
+  .sec.light .kicker{ color:var(--amber-deep); }
+  .sec.feature .kicker{ color:#5c3f14; }
+
+  .datemark{
+    display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 12px;
+    margin:0 0 20px; padding-bottom:16px;
+    border-bottom:1px solid currentColor;
+    font-family:"Josefin Sans",sans-serif; font-weight:700;
+  }
+  .sec.dark .datemark{ border-color:var(--pine-line); }
+  .sec.light .datemark{ border-color:var(--cream-2); }
+  .sec.feature .datemark{ border-color:rgba(58,42,18,.28); }
+  .datemark .big{ font-size:clamp(30px,8vw,42px); line-height:1; }
+  .datemark .big .wd{ font-family:"Zen Kaku Gothic New",sans-serif; font-size:.42em; font-weight:600; margin-left:3px; }
+  .datemark .big .arrow{ opacity:.55; margin:0 4px; }
+  .datemark .time{ font-size:15px; opacity:.7; }
+
+  .sec h2{
+    margin:0 0 20px;
+    font-family:"Kaisei Opti",serif; font-weight:700;
+    font-size:clamp(30px,8.4vw,44px);
+    line-height:1.5; letter-spacing:.02em;
+  }
+  .sec p{ margin:0 0 22px; font-size:16px; max-width:32em; }
+  .sec.dark p{ color:var(--cream-2); }
+  .sec.light p{ color:var(--ink-dim); }
+  .sec.feature p{ color:#4a3616; }
+
+  .photo{ margin:26px 0; max-width:560px; }
+  .sec.dark .photo{ border:1px solid var(--pine-line); }
+  .sec.light .photo{ border:1px solid var(--cream-2); }
+  .sec.feature .photo{ border:1px solid rgba(58,42,18,.25); }
+  .photo + .photo-note{
+    margin-top:-14px; margin-bottom:24px;
+    font-size:13px; letter-spacing:.06em; opacity:.7;
+  }
+
+  /* ---- 数字（割引率・名数） ---- */
+  .stats{ display:flex; flex-wrap:wrap; gap:34px; margin:24px 0 28px; }
+  .stat .k{ font-family:"Josefin Sans",sans-serif; font-size:12px; letter-spacing:.16em; opacity:.7; margin-bottom:6px; }
+  .stat .v{ font-family:"Josefin Sans",sans-serif; font-weight:700; font-size:clamp(40px,11vw,58px); line-height:1; }
+  .sec.dark .stat .v{ color:var(--amber-lite); }
+  .sec.light .stat .v{ color:var(--amber-deep); }
+  .stat .v .u{ font-family:"Zen Kaku Gothic New",sans-serif; font-size:.42em; font-weight:700; margin-left:2px; }
+  .stat .v .alert{ color:var(--alert); }
+
+  /* ---- 福袋カード（比較できる2商品なのでカードで整理） ---- */
+  .bags{ display:flex; flex-direction:column; gap:16px; margin:26px 0 30px; }
+  .bag{ background:var(--cream); color:var(--ink); padding:24px 22px; border:1px solid rgba(58,42,18,.2); }
+  @media (min-width:600px){
+    .bags{ flex-direction:row; }
+    .bag{ flex:1 1 0; }
+  }
+  .bag .bname{ font-family:"Kaisei Opti",serif; font-weight:700; font-size:21px; margin:0 0 6px; }
+  .bag .bprice{ font-family:"Josefin Sans",sans-serif; font-weight:700; font-size:34px; color:var(--amber-deep); line-height:1; margin-bottom:14px; }
+  .bag .bprice .u{ font-family:"Zen Kaku Gothic New",sans-serif; font-size:.44em; font-weight:700; margin-left:3px; }
+  .bag ul{ margin:0; padding:0; list-style:none; }
+  .bag li{ font-size:14.5px; color:var(--ink-dim); padding:5px 0 5px 18px; position:relative; }
+  .bag li::before{ content:""; position:absolute; left:0; top:13px; width:7px; height:7px; background:var(--amber); }
+
+  /* ---- ポケット優光泉：重ねるクーポン ---- */
+  .ladder{ margin:26px 0 30px; border-top:1px solid var(--pine-line); }
+  .ladder .step{
+    display:flex; align-items:baseline; gap:16px;
+    padding:18px 0; border-bottom:1px solid var(--pine-line);
+  }
+  .ladder .no{ font-family:"Josefin Sans",sans-serif; font-weight:700; font-size:20px; color:var(--amber-lite); flex-shrink:0; width:2ch; }
+  .ladder .what{ flex:1; font-size:15.5px; color:var(--cream-2); }
+  .ladder .off{ font-family:"Josefin Sans",sans-serif; font-weight:700; font-size:clamp(24px,7vw,32px); color:var(--amber-lite); white-space:nowrap; }
+  .ladder .off .u{ font-family:"Zen Kaku Gothic New",sans-serif; font-size:.5em; font-weight:700; margin-left:2px; }
+
+  /* ---- ボタン ---- */
+  .cta{
+    display:inline-block; text-decoration:none; font-weight:700; font-size:16px;
+    letter-spacing:.02em; padding:15px 26px; border:1.5px solid currentColor;
+  }
+  .sec.dark .cta{ color:var(--amber-lite); }
+  .sec.dark .cta:hover{ background:var(--amber-lite); color:var(--pine); }
+  .sec.light .cta{ color:var(--amber-deep); }
+  .sec.light .cta:hover{ background:var(--amber-deep); color:var(--cream); }
+  .sec.feature .cta{ color:#3a2a12; }
+  .sec.feature .cta:hover{ background:#3a2a12; color:var(--amber); }
+  .cta-row{ display:flex; flex-wrap:wrap; gap:12px; }
+  .cta-row + .cta-row{ margin-top:12px; }
+  .cta.solid{ background:#3a2a12; color:var(--amber); border-color:#3a2a12; }
+  .cta.solid:hover{ opacity:.85; background:#3a2a12; color:var(--amber); }
+
+  /* ================= 結び ================= */
+  .closing{ background:var(--pine); padding:72px 0 48px; }
+  .closing h2{
+    margin:0 0 20px;
+    font-family:"Kaisei Opti",serif; font-weight:700;
+    font-size:clamp(28px,7.6vw,40px); line-height:1.5;
+  }
+  .closing p{ margin:0 0 26px; color:var(--cream-2); font-size:16px; max-width:30em; }
+  .closing .fine{
+    margin-top:44px; padding-top:22px; border-top:1px solid var(--pine-line);
+    font-size:12.5px; color:var(--cream-2); opacity:.7; line-height:2;
+  }
+  .closing .cta{ color:var(--amber-lite); }
+  .closing .cta:hover{ background:var(--amber-lite); color:var(--pine); }
+
+  /* ---- スクロールで静かに現れる（JSが有効なときだけ）---- */
+  /* 既定は完全表示。JSが .js-anim を付けたときだけ隠してから出す */
+  .js-anim .reveal{ opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease; }
+  .js-anim .reveal.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce){
+    .js-anim .reveal{ opacity:1; transform:none; transition:none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ================= FV ================= -->
+  <header class="fv">
+    <div class="inner">
+      <p class="eyebrow">RAKUTEN SUPER SALE</p>
+      <h1>今回のSALE、<br>順番に<br>ご案内します。</h1>
+      <p class="lead">断食道場SHOPの大塚です。9月3日の福袋から、SALE終盤のクーポンまで。ファスティングをこれから始める方も、続けている方も、上から順に見ていってください。</p>
+      <div class="period">
+        <span class="tag">楽天スーパーSALE 開催期間</span>
+        <span class="range num">
+          <span>9/4 <small>fri 20:00</small></span>
+          <span class="arrow">→</span>
+          <span>9/11 <small>fri 01:59</small></span>
+        </span>
+        <p class="note">※ 店舗クーポン・サブローの日限定福袋は 9/3 から始まります。</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= カレンダー画像（差し替え予定） ================= -->
+  <figure class="calendar">
+    <!-- ▼▼ 差し替え：正式なSALEカレンダー画像 ▼▼ -->
+    <img src="images/calendar-poster-placeholder.svg" alt="断食道場SHOP スーパーSALEカレンダー（準備中）" width="750" height="520">
+    <figcaption>SALEカレンダー画像は準備中です</figcaption>
+  </figure>
+
+  <!-- ================= ご案内（目次） ================= -->
+  <nav class="toc" aria-label="このページのご案内">
+    <div class="inner">
+      <p class="label">GUIDE</p>
+      <p class="lead">今回のSALEで用意しているのは、次の4つです。</p>
+      <ol>
+        <li><a href="#fukubukuro"><span class="when num">9/3–6</span><span class="what">サブローの日 限定福袋</span><span class="go">→</span></a></li>
+        <li><a href="#off15"><span class="when num">9/3–5</span><span class="what">前半 15%OFF</span><span class="go">→</span></a></li>
+        <li><a href="#off10"><span class="when num">9/6–11</span><span class="what">後半 10%OFF</span><span class="go">→</span></a></li>
+        <li><a href="#pocket"><span class="when num">期間中</span><span class="what">ポケット優光泉クーポン</span><span class="go">→</span></a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ================= 1. サブローの日 限定福袋 ================= -->
+  <section class="sec feature" id="fukubukuro">
+    <div class="inner reveal">
+      <p class="kicker">SABURO NO HI ─ 毎月 3〜6 日</p>
+      <div class="datemark">
+        <span class="big">9/3<span class="wd">木</span><span class="arrow">→</span>9/6<span class="wd">日</span></span>
+        <span class="time">4日間だけ</span>
+      </div>
+      <h2>サブローの日、<br>限定福袋。</h2>
+      <p>店長 北島のあだ名「サブロー」にちなんで、毎月 3〜6 日だけ開く福袋です。中身はすべて公開しているので、届いてからのがっかりがありません。おすそわけ袋つきなので、家族や職場にも分けられます。</p>
+
+      <div class="bags">
+        <div class="bag">
+          <p class="bname">サブロー笑顔袋</p>
+          <p class="bprice num">3,600<span class="u">円（税込）</span></p>
+          <ul>
+            <li>ポケット優光泉 20ml × 15包</li>
+            <li>ポケット優光泉 20ml × 6包</li>
+            <li>くわタブレット 1袋</li>
+            <li>おすそわけ袋 2枚</li>
+          </ul>
+        </div>
+        <div class="bag">
+          <p class="bname">サブロー笑顔 2倍盛り袋</p>
+          <p class="bprice num">7,200<span class="u">円（税込）</span></p>
+          <ul>
+            <li>優光泉 600ml ボトル 1本</li>
+            <li>ポケット優光泉 20ml × 15包</li>
+            <li>ポケット優光泉 20ml × 6包</li>
+            <li>くわタブレット 1袋</li>
+            <li>おすそわけ袋 2枚</li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="photo">
+        <!-- 差し替え可：楽天キャビネット imgrc0087272508.jpg（優光泉 濃縮和漢発酵ドリンク） -->
+        <img src="images/yukosen-wakan.jpg" alt="グラスに注いだ優光泉 濃縮和漢発酵ドリンクと、原料の和漢素材" loading="lazy">
+      </figure>
+      <p class="photo-note">福袋に入る「ポケット優光泉」は、128種以上の素材からつくる植物性発酵飲料です。</p>
+
+      <div class="cta-row">
+        <a class="cta solid" href="https://www.rakuten.ne.jp/gold/danjiki-dojo/event/201712/20250203.html" target="_blank" rel="noopener">福袋の詳細ページを見る ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 2. 前半 15%OFF ================= -->
+  <section class="sec dark" id="off15">
+    <div class="inner reveal">
+      <p class="kicker">START DASH ─ 先着 200 名</p>
+      <div class="datemark">
+        <span class="big">9/3<span class="wd">木</span><span class="arrow">→</span>9/5<span class="wd">土</span></span>
+        <span class="time">SALE前半の3日間</span>
+      </div>
+      <h2>はじめの3日間は、<br>対象商品が 15%OFF。</h2>
+      <p>SALE前半だけの割引クーポンです。先着 200 名に達し次第終了なので、買うものが決まっている方は、まずクーポンの受け取りから済ませておいてください。</p>
+
+      <div class="stats">
+        <div class="stat"><div class="k">DISCOUNT</div><div class="v num">15<span class="u">%OFF</span></div></div>
+        <div class="stat"><div class="k">LIMIT</div><div class="v num"><span class="alert">200</span><span class="u">名</span></div></div>
+      </div>
+
+      <figure class="photo">
+        <!-- 差し替え可：楽天キャビネット kago/reg-1-kago-01.jpg（優光泉 レギュラーボトル） -->
+        <img src="images/yukosen-regular.jpg" alt="優光泉 スタンダード レギュラーボトルと、水で割った1杯" loading="lazy">
+      </figure>
+      <p class="photo-note">対象商品はショップ内の優光泉シリーズが中心です。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://coupon.rakuten.co.jp/getCoupon?getkey=NVpKQy1VTEdULU1UTUctSjVYUA--&rt=" target="_blank" rel="noopener">15%OFFクーポンを受け取る ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. 後半 10%OFF ================= -->
+  <section class="sec light" id="off10">
+    <div class="inner reveal">
+      <p class="kicker">AFTER 9/6</p>
+      <div class="datemark">
+        <span class="big">9/6<span class="wd">日</span><span class="arrow">→</span>9/11<span class="wd">金</span></span>
+        <span class="time">SALE終了 1:59 まで</span>
+      </div>
+      <h2>9月6日からは、<br>10%OFF。</h2>
+      <p>前半に間に合わなくても大丈夫です。6日以降は対象商品全品が 10%OFF。SALE最終日、9月11日 1:59 まで使えます。はじめての方は、少量のお試しセットから始めるのがおすすめです。</p>
+
+      <div class="stats">
+        <div class="stat"><div class="k">DISCOUNT</div><div class="v num">10<span class="u">%OFF</span></div></div>
+      </div>
+
+      <figure class="photo">
+        <!-- 差し替え可：楽天キャビネット kago/0002.jpg（優光泉 お試しセット） -->
+        <img src="images/yukosen-otameshi.jpg" alt="優光泉 お試しセット スタンダードと梅の小瓶2本" loading="lazy">
+      </figure>
+      <p class="photo-note">まず味を確かめたい方へ。スタンダードと梅の2本セット。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://coupon.rakuten.co.jp/getCoupon?getkey=U0NUQS00SVFXLTBRUjItVUtLSA--&rt=" target="_blank" rel="noopener">10%OFFクーポンを受け取る ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. ポケット優光泉 重ねるクーポン ================= -->
+  <section class="sec dark" id="pocket">
+    <div class="inner reveal">
+      <p class="kicker">POCKET YUKOSEN ─ SALE 期間中</p>
+      <div class="datemark">
+        <span class="big">期間中<span class="arrow">→</span>9/11<span class="wd">金</span></span>
+        <span class="time">3枚のクーポンを重ねて使えます</span>
+      </div>
+      <h2>まとめるほど、<br>1包が軽くなる。</h2>
+      <p>ポケット優光泉 15包シリーズは、下の3枚のクーポンを重ねて使えます。1箱だけでも、3箱そろえても。持ち運びやすいスティックなので、外出が多い日のファスティングにも向いています。</p>
+
+      <div class="ladder">
+        <div class="step">
+          <span class="no num">01</span>
+          <span class="what">1箱目</span>
+          <span class="off num">20<span class="u">%OFF</span></span>
+        </div>
+        <div class="step">
+          <span class="no num">02</span>
+          <span class="what">2箱目</span>
+          <span class="off num">45<span class="u">%OFF</span></span>
+        </div>
+        <div class="step">
+          <span class="no num">03</span>
+          <span class="what">3箱目</span>
+          <span class="off num">0<span class="u">円 ／ 無料</span></span>
+        </div>
+      </div>
+
+      <figure class="photo">
+        <!-- 差し替え可：楽天キャビネット imgrc0088377568.jpg（ポケット優光泉 濃縮和漢発酵ドリンク） -->
+        <img src="images/pocket-yukosen.jpg" alt="ポケット優光泉のスティックをグラスに注ぐようす" loading="lazy">
+      </figure>
+      <p class="photo-note">※ ゼリーは対象外です。対象は「ポケット優光泉 15包シリーズ」。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://coupon.rakuten.co.jp/getCoupon?getkey=WVE3Sy1JUEcwLUczOFctTEo1Nw--&rt=" target="_blank" rel="noopener">1箱目 20%OFF ↗</a>
+        <a class="cta" href="https://coupon.rakuten.co.jp/getCoupon?getkey=NkpVSy1ZRllHLVM2QzItSUVQRw--&rt=" target="_blank" rel="noopener">2箱目 45%OFF ↗</a>
+        <a class="cta" href="https://coupon.rakuten.co.jp/getCoupon?getkey=UFFMVi1PSllNLVNGOE0tVU44UA--&rt=" target="_blank" rel="noopener">3箱目 無料 ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 結び ================= -->
+  <footer class="closing">
+    <div class="inner reveal">
+      <h2>SALE期間中、<br>よろしく<br>お願いします。</h2>
+      <p>わからないことがあれば、いつでもショップからお問い合わせください。あなたのファスティングが、気持ちよく続きますように。</p>
+      <div class="cta-row">
+        <a class="cta" href="https://www.rakuten.co.jp/danjiki-dojo/" target="_blank" rel="noopener">断食道場SHOP トップ ↗</a>
+        <a class="cta" href="https://www.rakuten.ne.jp/gold/danjiki-dojo/event/201712/20260904_sale15off.html" target="_blank" rel="noopener">SALE会場ページ ↗</a>
+      </div>
+      <p class="fine">
+        ※ 定期購入はポイント・クーポンの対象外です。<br>
+        ※ SALE期間はご注文を多くいただくため、お届けまでにお時間をいただく場合があります。<br>
+        断食道場SHOP｜楽天スーパーSALEの歩き方
+      </p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!els.length) return;
+    if(!('IntersectionObserver' in window)) return; /* JSなし相当：既定の完全表示のまま */
+    document.documentElement.classList.add('js-anim');
+    var reveal = function(e){ e.classList.add('in'); };
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ reveal(en.target); io.unobserve(en.target); }
+      });
+    }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' });
+    els.forEach(function(e){ io.observe(e); });
+    /* 失敗時の保険：一定時間で全表示 */
+    setTimeout(function(){ els.forEach(reveal); }, 2500);
+  })();
+</script>
+</body>
+</html>

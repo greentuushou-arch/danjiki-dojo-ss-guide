@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 520" role="img" aria-label="SALEカレンダー 準備中">
+  <rect width="750" height="520" fill="#1c3a30"/>
+  <rect x="24" y="24" width="702" height="472" fill="none" stroke="#c98a3c" stroke-width="1.5"/>
+  <text x="375" y="238" text-anchor="middle" font-family="'Kaisei Opti', serif" font-size="46" fill="#f4efe3">SALEカレンダー</text>
+  <text x="375" y="300" text-anchor="middle" font-family="'Zen Kaku Gothic New', sans-serif" font-size="22" letter-spacing="4" fill="#c9b892">ただいま準備中です</text>
+  <text x="375" y="470" text-anchor="middle" font-family="'Josefin Sans', sans-serif" font-size="15" letter-spacing="3" fill="#7f9086">IMAGE COMING SOON</text>
+</svg>
