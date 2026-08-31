@@ -9,7 +9,7 @@
 - 配色：**イベント仕様のピンク＋イエロー（全面ベタ塗り・無地）**。ピンク `#E64C86`（上品なローズ）/ 深ローズ `#C43A70`（deep・結び背景）/ ビビッドイエロー `#FFD400` / 生成り `#FFFBF4` / インク（赤みの黒）`#2A0E1E`（本文・アウトライン・ハード影）。両脇の余白は淡ピンク `#FFE4EE`、ご案内は淡イエロー `#FFF4C2`
 - セクションの地色クラス：`.sec.cream` / `.sec.pink`（ベタピンク＋白文字）/ `.sec.butter`・`.sec.feature`（ベタイエロー）/ `.sec.deep`（深ローズ＋白文字）。すべて単色（斜線・ドット・グラデは無し）
 - フォント：見出し・巨大数字＝**Zen Kaku Gothic New（900）**（Google Fonts／`--font-display`）、本文＝MS Pゴシック**太字**（`body{font-weight:700}`）、小さめ数字＝LINE Seed JP。フォント指定を変える場合は `:root` の `--font-display` / `--font-jp` / `--font-num`
-- デザイン：極太ピルボタン、太枠＋**45°の斜線ハッチ影**（オフセットした `::after` に `repeating-linear-gradient(45deg, var(--ink) ...)`）のステッカー風カード・写真・バッジ、傾いたピル型キッカー、割引率は巨大数字（text-shadow）。斜線影がはみ出しても横スクロールしないよう `html,body{overflow-x:hidden}`
+- デザイン：極太ピルボタン、太枠＋ベタのオフセット影（`box-shadow:Npx Npx 0`）のステッカー風カード・写真・バッジ、傾いたピル型キッカー、割引率は巨大数字（text-shadow）
 - 表記ルール：楽天SALEの規定で "SUPER" 単独の英字表記は禁止。FVラベルは「RAKUTENスーパーSALE」。英字の "SUPER SALE" を使わないこと
 - フォント：`:root` の `--font-jp` / `--font-accent` / `--font-num` の3変数で一括管理
   - 本文・見出し（タイトル含む）＝ **MS Pゴシック**（`--font-jp` / `--font-accent`）。MS Pゴシックは Windows 専用のローカルフォントなので、スマホ（iOS/Android）など無い端末では Hiragino/Noto などのゴシック体にフォールバックします

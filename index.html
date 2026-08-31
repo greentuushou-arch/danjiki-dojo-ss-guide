@@ -42,7 +42,7 @@
     --ink-dim:#6E3A52;     /* くすませた文字 */
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth; overflow-x:hidden;}
+  html{scroll-behavior:smooth;}
   @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
   body{
     margin:0;
@@ -52,7 +52,6 @@
     font-weight:700;
     -webkit-font-smoothing:antialiased;
     line-height:1.85;
-    overflow-x:hidden;   /* 斜線影の擬似要素が画面右にはみ出しても横スクロールさせない */
   }
   img{max-width:100%; height:auto; display:block;}
   a{color:inherit;}
@@ -63,24 +62,12 @@
   .inner{ padding:0 30px; }
   @media (max-width:520px){ .inner{ padding:0 20px; } }
 
-  /* 共通：斜線ハッチの影（オフセットした擬似要素に45°ストライプ） */
-  .hatch{ position:relative; z-index:0; }
-  .hatch::after{
-    content:""; position:absolute; inset:0; z-index:-1;
-    border-radius:inherit;
-    background:repeating-linear-gradient(45deg, var(--ink) 0 2.5px, transparent 2.5px 7px);
-  }
-
-  /* 共通：ステッカー風のキッカー（ピル型・傾き・斜線影） */
+  /* 共通：ステッカー風のキッカー（ピル型・傾き・オフセット影） */
   .kicker{
-    display:inline-block; margin:0 0 20px; position:relative; z-index:0;
+    display:inline-block; margin:0 0 20px;
     font-family:var(--font-num); font-weight:700; font-size:14px; letter-spacing:.1em;
     padding:9px 18px; border-radius:999px; transform:rotate(-2deg);
-  }
-  .kicker::after{
-    content:""; position:absolute; inset:0; z-index:-1; border-radius:999px;
-    transform:translate(4px,4px);
-    background:repeating-linear-gradient(45deg, var(--ink) 0 1.6px, transparent 1.6px 4.6px);
+    box-shadow:4px 4px 0 rgba(0,0,0,.16);
   }
 
   /* ================= FV ================= */
@@ -90,15 +77,11 @@
     color:#fff;
   }
   .fv .eyebrow{
-    display:inline-block; margin:0 0 24px; position:relative; z-index:0;
+    display:inline-block; margin:0 0 24px;
     font-family:var(--font-jp); font-weight:700; font-size:15px; letter-spacing:.1em;
     background:var(--ink); color:var(--yellow);
     padding:10px 20px; border-radius:999px; transform:rotate(-2.5deg);
-  }
-  .fv .eyebrow::after{
-    content:""; position:absolute; inset:0; z-index:-1; border-radius:999px;
-    transform:translate(5px,5px);
-    background:repeating-linear-gradient(45deg, var(--ink) 0 1.8px, transparent 1.8px 5px);
+    box-shadow:4px 4px 0 rgba(0,0,0,.2);
   }
   .fv h1{
     margin:0 0 28px;
@@ -133,13 +116,7 @@
   /* ================= カレンダー画像 ================= */
   /* ▼▼ 後日、正式なSALEカレンダー画像に差し替え ▼▼ */
   .calendar{ margin:0; padding:34px 0; background:var(--cream); }
-  .calendar .fr{ display:block; position:relative; z-index:0; border:4px solid var(--ink); border-radius:20px; }
-  .calendar .fr img{ display:block; width:100%; border-radius:15px; }
-  .calendar .fr::after{
-    content:""; position:absolute; left:-4px; top:-4px; right:-4px; bottom:-4px; z-index:-1;
-    border-radius:20px; transform:translate(13px,13px);
-    background:repeating-linear-gradient(45deg, var(--ink) 0 3px, transparent 3px 8px);
-  }
+  .calendar img{ width:100%; border:4px solid var(--ink); border-radius:20px; box-shadow:10px 10px 0 var(--pink); }
   .calendar figcaption{
     padding:18px 30px 0; font-size:15px; font-weight:700; color:var(--ink-dim);
   }
@@ -212,13 +189,10 @@
   .sec.cream p, .sec.butter p, .sec.feature p{ color:var(--ink); }
   .sec.pink p, .sec.deep p{ color:#fff; }
 
-  .photo{ margin:28px auto; max-width:560px; border:4px solid var(--ink); border-radius:20px; position:relative; z-index:0; }
-  .photo img{ border-radius:15px; }
-  .photo::after{
-    content:""; position:absolute; left:-4px; top:-4px; right:-4px; bottom:-4px; z-index:-1;
-    border-radius:20px; transform:translate(13px,13px);
-    background:repeating-linear-gradient(45deg, var(--ink) 0 3px, transparent 3px 8px);
-  }
+  .photo{ margin:28px auto; max-width:560px; border:4px solid var(--ink); border-radius:20px; overflow:hidden; }
+  .sec.cream .photo, .sec.feature .photo{ box-shadow:10px 10px 0 var(--pink); }
+  .sec.butter .photo{ box-shadow:10px 10px 0 var(--pink-deep); }
+  .sec.pink .photo, .sec.deep .photo{ box-shadow:10px 10px 0 var(--yellow); }
   .photo + .photo-note{
     margin:16px auto 28px; max-width:560px;
     font-size:15px; font-weight:700; line-height:1.75; text-align:center;
@@ -243,12 +217,7 @@
 
   /* ---- 福袋カード（ステッカー風） ---- */
   .bags{ display:flex; flex-direction:column; gap:20px; margin:28px 0 32px; }
-  .bag{ background:#fff; color:var(--ink); padding:26px 22px; border:4px solid var(--ink); border-radius:20px; position:relative; z-index:0; }
-  .bag::after{
-    content:""; position:absolute; left:-4px; top:-4px; right:-4px; bottom:-4px; z-index:-1;
-    border-radius:20px; transform:translate(10px,10px);
-    background:repeating-linear-gradient(45deg, var(--ink) 0 3px, transparent 3px 8px);
-  }
+  .bag{ background:#fff; color:var(--ink); padding:26px 22px; border:4px solid var(--ink); border-radius:20px; box-shadow:8px 8px 0 var(--pink); }
   @media (min-width:600px){
     .bags{ flex-direction:row; }
     .bag{ flex:1 1 0; }
@@ -271,25 +240,21 @@
   .ladder .off{ font-family:var(--font-display); font-weight:900; font-size:clamp(28px,8vw,42px); color:var(--yellow); white-space:nowrap; text-shadow:3px 3px 0 rgba(0,0,0,.25); }
   .ladder .off .u{ font-family:var(--font-jp); font-size:.32em; font-weight:700; margin-left:3px; }
 
-  /* ---- ボタン（極太ピル＋斜線影） ---- */
+  /* ---- ボタン（極太ピル＋オフセット影） ---- */
   .cta{
-    display:inline-block; text-decoration:none; position:relative; z-index:0;
+    display:inline-block; text-decoration:none;
     font-family:var(--font-jp); font-weight:700; font-size:clamp(15px,4vw,18px);
     padding:17px 32px; border:3px solid var(--ink); border-radius:999px;
-    transition:transform .12s ease;
+    box-shadow:5px 5px 0 var(--ink);
+    transition:transform .12s ease, box-shadow .12s ease;
   }
-  .cta::after{
-    content:""; position:absolute; left:-3px; top:-3px; right:-3px; bottom:-3px; z-index:-1;
-    border-radius:999px; transform:translate(6px,6px);
-    background:repeating-linear-gradient(45deg, var(--ink) 0 2.2px, transparent 2.2px 6px);
-  }
-  .cta:hover{ transform:translate(3px,3px); }
-  .cta:hover::after{ transform:translate(3px,3px); }
+  .cta:hover{ transform:translate(2px,2px); box-shadow:2px 2px 0 var(--ink); }
   .sec.cream .cta, .sec.butter .cta, .sec.feature .cta{ background:var(--pink); color:#fff; }
   .sec.pink .cta, .sec.deep .cta{ background:var(--yellow); color:var(--ink); }
   .cta-row{ display:flex; flex-wrap:wrap; gap:14px; }
   .cta-row + .cta-row{ margin-top:14px; }
-  .cta.solid{ background:var(--ink); color:var(--yellow); }
+  .cta.solid{ background:var(--ink); color:var(--yellow); box-shadow:5px 5px 0 var(--pink); }
+  .cta.solid:hover{ box-shadow:2px 2px 0 var(--pink); }
 
   /* ================= 結び ================= */
   .closing{
@@ -330,23 +295,17 @@
   .lg-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
   @media (min-width:600px){ .lg-grid{ grid-template-columns:repeat(3,1fr); gap:20px; } }
   .pcard{
-    display:flex; flex-direction:column; position:relative; z-index:0;
-    background:#fff; border:3px solid var(--ink); border-radius:16px;
+    display:flex; flex-direction:column;
+    background:#fff; border:3px solid var(--ink); border-radius:16px; overflow:hidden;
     text-decoration:none; color:var(--ink);
-    transition:transform .12s ease;
+    box-shadow:5px 5px 0 var(--pink); transition:transform .12s ease, box-shadow .12s ease;
   }
-  .pcard::after{
-    content:""; position:absolute; left:-3px; top:-3px; right:-3px; bottom:-3px; z-index:-1;
-    border-radius:16px; transform:translate(7px,7px);
-    background:repeating-linear-gradient(45deg, var(--ink) 0 2.4px, transparent 2.4px 6.6px);
-  }
-  .pcard img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-bottom:3px solid var(--ink); border-radius:13px 13px 0 0; }
+  .pcard img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-bottom:3px solid var(--ink); }
   .pcard .pc-body{ padding:14px 13px 15px; display:flex; flex-direction:column; flex:1; }
   .pcard .pc-name{ font-size:16px; font-weight:700; line-height:1.5; }
   .pcard .pc-spec{ margin-top:6px; font-size:13.5px; font-weight:700; line-height:1.6; color:var(--ink-dim); }
   .pcard .pc-go{ margin-top:auto; padding-top:12px; font-family:var(--font-num); font-size:13px; font-weight:700; letter-spacing:.04em; color:var(--pink); }
-  .pcard:hover{ transform:translate(3px,3px); }
-  .pcard:hover::after{ transform:translate(4px,4px); }
+  .pcard:hover{ transform:translate(2px,2px); box-shadow:2px 2px 0 var(--pink); }
 
   /* ---- スクロールで静かに現れる（JSが有効なときだけ）---- */
   /* 既定は完全表示。JSが .js-anim を付けたときだけ隠してから出す */
@@ -381,7 +340,7 @@
   <!-- ================= カレンダー画像（差し替え予定） ================= -->
   <figure class="calendar">
     <!-- ▼▼ 差し替え：正式なSALEカレンダー画像 ▼▼ -->
-    <span class="fr"><img src="images/calendar-poster-placeholder.svg" alt="断食道場SHOP スーパーSALEカレンダー（準備中）" width="750" height="520"></span>
+    <img src="images/calendar-poster-placeholder.svg" alt="断食道場SHOP スーパーSALEカレンダー（準備中）" width="750" height="520">
     <figcaption>SALEカレンダー画像は準備中です</figcaption>
   </figure>
 
