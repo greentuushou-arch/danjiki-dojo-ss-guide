@@ -6,9 +6,9 @@
 
 - 1ファイル完結：`index.html` に CSS・JS をすべて内包
 - 中央1カラム `max-width:750px`、両脇は深緑の余白
-- 配色：**イベント仕様のビビッドなピンク＋イエロー**。ピンク `#FF2E7E` / 濃マゼンタ `#D1005A`（deep・結び背景）/ ビビッドイエロー `#FFD400` / 生成り `#FFFBF4` / インク（赤みの黒）`#2A0E1E`（本文・アウトライン・ハード影）
-- セクションの地色クラス：`.sec.cream` / `.sec.pink`（ベタピンク＋白文字）/ `.sec.butter`（ベタイエロー）/ `.sec.deep`（濃マゼンタ＋白文字）/ `.sec.feature`（イエロー→ピンクのグラデ）。ドット地・斜めストライプ地・両脇キャンディストライプ
-- フォント：見出し・巨大数字＝**Dela Gothic One**（Google Fonts・極太／`--font-display`）、本文＝MS Pゴシック**太字**（`body{font-weight:700}`）、小さめ数字＝LINE Seed JP。フォント指定を変える場合は `:root` の `--font-display` / `--font-jp` / `--font-num`
+- 配色：**イベント仕様のピンク＋イエロー（全面ベタ塗り・無地）**。ピンク `#E64C86`（上品なローズ）/ 深ローズ `#C43A70`（deep・結び背景）/ ビビッドイエロー `#FFD400` / 生成り `#FFFBF4` / インク（赤みの黒）`#2A0E1E`（本文・アウトライン・ハード影）。両脇の余白は淡ピンク `#FFE4EE`、ご案内は淡イエロー `#FFF4C2`
+- セクションの地色クラス：`.sec.cream` / `.sec.pink`（ベタピンク＋白文字）/ `.sec.butter`・`.sec.feature`（ベタイエロー）/ `.sec.deep`（深ローズ＋白文字）。すべて単色（斜線・ドット・グラデは無し）
+- フォント：見出し・巨大数字＝**Zen Kaku Gothic New（900）**（Google Fonts／`--font-display`）、本文＝MS Pゴシック**太字**（`body{font-weight:700}`）、小さめ数字＝LINE Seed JP。フォント指定を変える場合は `:root` の `--font-display` / `--font-jp` / `--font-num`
 - デザイン：極太ピルボタン＋ハード影（`box-shadow:5px 5px 0`）、太枠＋色ズレ影のステッカー風カード・写真、傾いたピル型バッジのキッカー、割引率は巨大バースト数字（text-shadow）
 - フォント：`:root` の `--font-jp` / `--font-accent` / `--font-num` の3変数で一括管理
   - 本文・見出し（タイトル含む）＝ **MS Pゴシック**（`--font-jp` / `--font-accent`）。MS Pゴシックは Windows 専用のローカルフォントなので、スマホ（iOS/Android）など無い端末では Hiragino/Noto などのゴシック体にフォールバックします
