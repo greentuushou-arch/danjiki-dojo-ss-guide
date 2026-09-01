@@ -179,32 +179,31 @@
   .coupon .cd .wd{ font-size:.5em; color:var(--ink-dim); margin:0 3px; }
   .coupon .badge{
     position:relative;
-    display:inline-block; margin-top:24px;
+    display:inline-block; margin-top:14px; margin-bottom:8px;
     font-weight:700; font-size:15px; letter-spacing:.02em;
     padding:8px 16px; border-radius:16px;
     background:var(--yellow); color:var(--ink); border:2px solid var(--ink);
   }
-  /* 吹き出しのしっぽ（上向き。日付を指す）：インクの縁取り＋イエローの中身 */
+  /* 吹き出しのしっぽ（下向き。下のクーポンを指す）：インクの縁取り＋イエローの中身 */
   .coupon .badge::before{
-    content:""; position:absolute; left:22px; top:-13px;
-    border:9px solid transparent; border-bottom:11px solid var(--ink);
+    content:""; position:absolute; left:22px; bottom:-13px;
+    border:9px solid transparent; border-top:11px solid var(--ink);
   }
   .coupon .badge::after{
-    content:""; position:absolute; left:24px; top:-8px;
-    border:7px solid transparent; border-bottom:9px solid var(--yellow);
+    content:""; position:absolute; left:24px; bottom:-8px;
+    border:7px solid transparent; border-top:9px solid var(--yellow);
   }
   .coupon .thumb{
     width:100%; max-width:400px; margin:0 auto 22px;
     border:3px solid var(--ink); border-radius:16px; overflow:hidden; box-shadow:6px 6px 0 var(--pink);
   }
   .coupon .thumb img{ width:100%; aspect-ratio:1/1; object-fit:cover; display:block; }
-  /* 横長のクーポンバナー（画像自体がクーポンリンク） */
+  /* 横長のクーポンバナー（支給画像をそのまま。枠・影は付けない） */
   .coupon .banner{
-    display:block; width:100%; max-width:520px; margin:6px auto 22px;
-    border:3px solid var(--ink); border-radius:14px; overflow:hidden; box-shadow:6px 6px 0 var(--pink);
+    display:block; width:100%; max-width:520px; margin:8px auto 22px;
   }
   .coupon .banner img{ width:100%; height:auto; display:block; }
-  .coupon .banner:hover{ box-shadow:3px 3px 0 var(--pink); }
+  .coupon .banner:hover{ opacity:.92; }
   .coupon .big{
     font-family:var(--font-display); font-weight:900; font-size:clamp(46px,13.5vw,74px);
     line-height:1; color:var(--pink); margin:0 0 8px;
@@ -247,8 +246,8 @@
   }
   .pack .thumb img{ width:100%; aspect-ratio:1/1; object-fit:cover; display:block; }
   .pack .pname{ font-weight:700; font-size:18.5px; line-height:1.5; margin:0 0 8px; }
-  .pack .pprice{ font-family:var(--font-display); font-weight:900; font-size:clamp(46px,14vw,66px); color:var(--pink); line-height:1.05; margin:2px 0 4px; }
-  .pack .pprice .u{ display:block; font-family:var(--font-display); font-size:.4em; font-weight:900; margin-top:2px; color:var(--ink); }
+  .pack .pprice{ font-family:var(--font-display); font-weight:900; font-size:clamp(48px,15vw,70px); color:var(--pink); line-height:1.02; margin:2px 0 4px; }
+  .pack .pprice .u{ display:block; font-family:var(--font-display); font-size:.62em; font-weight:900; margin-top:0; color:var(--pink); }
   .pack .pnote{ font-size:16px; font-weight:700; color:var(--ink-dim); margin:10px 0 20px; }
   .pack .cta{ margin-top:auto; display:block; text-align:center; padding:15px 16px; font-size:16.5px; background:var(--pink); color:#fff; }
 
@@ -429,15 +428,15 @@
         <div class="pack">
           <figure class="thumb"><img src="images/items/1000.jpg" alt="ポケット優光泉 6包" loading="lazy"></figure>
           <p class="pname">ポケット優光泉 6包</p>
-          <p class="pprice num">1,000<span class="u">円ポッキリ</span></p>
-          <p class="pnote">送料・税込。持ち運べる個包装タイプ</p>
+          <p class="pprice num">1,000円<span class="u">ポッキリ</span></p>
+          <p class="pnote">お試しにはこちら！お手軽に始めるファスティング！</p>
           <a class="cta" href="https://item.rakuten.co.jp/danjiki-dojo/1000/" target="_blank" rel="noopener">商品を見る ↗</a>
         </div>
         <div class="pack">
           <figure class="thumb"><img src="images/items/4001.jpg" alt="酵素ゼリー ミカン味 6包" loading="lazy"></figure>
           <p class="pname">酵素ゼリー（ミカン味） 6包</p>
-          <p class="pprice num">1,000<span class="u">円ポッキリ</span></p>
-          <p class="pnote">送料・税込。かんで食べる酵素</p>
+          <p class="pprice num">1,000円<span class="u">ポッキリ</span></p>
+          <p class="pnote">子どもから大人まで美味しいミカン酵素ゼリー</p>
           <a class="cta" href="https://item.rakuten.co.jp/danjiki-dojo/4001/" target="_blank" rel="noopener">商品を見る ↗</a>
         </div>
       </div>
