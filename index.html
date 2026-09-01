@@ -70,7 +70,8 @@
   }
 
   /* ================= FV ================= */
-  .fv{ padding:96px 0 60px; background:var(--pink); color:#fff; }
+  .fv{ padding:92px 0 60px; background:var(--pink); color:#fff; }
+  .fv .inner{ text-align:center; }
   .fv .eyebrow{
     display:inline-block; margin:0 0 24px;
     font-family:var(--font-jp); font-weight:700; font-size:15px; letter-spacing:.1em;
@@ -79,17 +80,16 @@
     box-shadow:4px 4px 0 rgba(0,0,0,.2);
   }
   .fv h1{
-    margin:0 0 28px;
+    margin:0 0 26px;
     font-family:var(--font-display); font-weight:900;
     font-size:clamp(46px,13vw,88px);
-    line-height:1.3; letter-spacing:0;
-    color:#fff; text-shadow:5px 5px 0 var(--ink);
+    line-height:1.3; letter-spacing:0; color:#fff;
   }
   .fv .lead{
-    margin:0 0 32px; max-width:26em;
-    font-size:clamp(16.5px,4.4vw,20px); font-weight:700; line-height:1.85; color:#fff;
+    margin:0 auto 30px; max-width:24em;
+    font-size:clamp(17px,4.6vw,20px); font-weight:700; line-height:1.85; color:#fff;
   }
-  .period{ border:3px solid #fff; border-radius:20px; padding:22px; background:rgba(255,255,255,.12); }
+  .period{ max-width:440px; margin:0 auto; border:3px solid #fff; border-radius:20px; padding:22px; background:rgba(255,255,255,.12); }
   .period .tag{
     display:inline-block; margin-bottom:12px;
     font-family:var(--font-num); font-size:13px; letter-spacing:.14em; font-weight:700;
@@ -97,37 +97,38 @@
   }
   .period .range{
     font-family:var(--font-num); font-weight:700;
-    font-size:clamp(23px,6.4vw,36px);
-    display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px; color:#fff;
+    font-size:clamp(23px,6.4vw,34px);
+    display:flex; flex-wrap:wrap; align-items:baseline; justify-content:center; gap:6px 12px; color:#fff;
   }
   .period .range small{ font-size:.5em; color:#fff; font-weight:700; opacity:.85; }
   .period .range .arrow{ color:var(--yellow); }
-  .period .note{ margin:12px 0 0; font-size:14px; font-weight:700; color:#fff; opacity:.9; }
+  .period .note{ margin:12px 0 0; font-size:15px; font-weight:700; color:#fff; opacity:.9; }
 
   /* ================= カレンダー画像 ================= */
   /* ▼▼ 後日、正式なSALEカレンダー画像に差し替え（images/ に置いて src を変更） ▼▼ */
-  .calendar{ margin:0; padding:36px 0 30px; background:var(--cream); }
+  .calendar{ margin:0; padding:36px 0 30px; background:var(--cream); text-align:center; }
   .calendar img{ width:100%; border:4px solid var(--ink); border-radius:20px; box-shadow:10px 10px 0 var(--pink); }
-  .calendar figcaption{ padding:18px 30px 0; font-size:15px; font-weight:700; color:var(--ink-dim); }
+  .calendar figcaption{ padding:18px 20px 0; font-size:16px; font-weight:700; color:var(--ink-dim); }
 
   /* ================= 早見表 ================= */
-  .toc{ background:var(--yellow-soft); color:var(--ink); padding:44px 0 40px; }
+  .toc{ background:var(--yellow-soft); color:var(--ink); padding:44px 0 40px; text-align:center; }
   .toc .label{
     display:inline-block; margin:0 0 14px;
     font-family:var(--font-num); font-size:13px; font-weight:700; letter-spacing:.16em;
     background:var(--ink); color:var(--yellow); padding:8px 16px; border-radius:999px; transform:rotate(-2deg);
   }
-  .toc .lead{ margin:0 0 22px; font-size:17px; font-weight:700; color:var(--ink); }
+  .toc .lead{ margin:0 0 22px; font-size:17.5px; font-weight:700; color:var(--ink); }
   .toc ol{ margin:0; padding:0; list-style:none; border-top:2px solid var(--ink); }
   .toc li{ border-bottom:2px solid var(--ink); }
-  .toc a{ display:flex; align-items:center; gap:12px; padding:15px 2px; text-decoration:none; color:var(--ink); }
-  .toc .when{ font-family:var(--font-num); font-weight:700; font-size:13px; color:var(--ink-dim); flex-shrink:0; width:5.6em; white-space:nowrap; }
-  .toc .what{ flex:1; font-weight:700; font-size:16.5px; line-height:1.4; }
-  .toc a .go{ color:var(--pink); flex-shrink:0; font-size:20px; }
+  .toc a{ display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:6px 12px; padding:15px 2px; text-decoration:none; color:var(--ink); }
+  .toc .when{ font-family:var(--font-num); font-weight:700; font-size:13.5px; color:var(--ink-dim); white-space:nowrap; }
+  .toc .what{ font-weight:700; font-size:16.5px; line-height:1.4; }
+  .toc a .go{ color:var(--pink); font-size:20px; }
   .toc a:hover .what{ color:var(--pink); }
 
   /* ================= セクション共通 ================= */
-  .sec{ padding:74px 0; }
+  .sec{ padding:72px 0; }
+  .sec .inner{ text-align:center; }
   .sec.pink{ background:var(--pink); color:#fff; }
   .sec.butter{ background:var(--yellow); color:var(--ink); }
   .sec.pink .kicker{ background:var(--yellow); color:var(--ink); }
@@ -138,13 +139,13 @@
     font-family:var(--font-display); font-weight:900;
     font-size:clamp(30px,8.2vw,54px); line-height:1.36; letter-spacing:0;
   }
-  .sec.pink h2{ color:#fff; text-shadow:4px 4px 0 var(--pink-deep); }
-  .sec.butter h2{ color:var(--ink); text-shadow:4px 4px 0 var(--pink); }
-  .sec .sub{ margin:0 0 30px; font-size:clamp(15.5px,4.2vw,18px); font-weight:700; line-height:1.8; }
+  .sec.pink h2{ color:#fff; }
+  .sec.butter h2{ color:var(--ink); }
+  .sec .sub{ margin:0 auto 30px; max-width:30em; font-size:clamp(16px,4.4vw,19px); font-weight:700; line-height:1.85; }
   .sec.pink .sub{ color:#fff; }
   .sec.butter .sub{ color:var(--ink); }
 
-  .datemark{ display:flex; align-items:center; flex-wrap:wrap; gap:10px 14px; margin:0 0 18px; font-family:var(--font-display); font-weight:900; }
+  .datemark{ display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:10px 14px; margin:0 0 18px; font-family:var(--font-display); font-weight:900; }
   .datemark .big{ font-size:clamp(30px,8.6vw,48px); line-height:1.1; }
   .datemark .big .wd{ font-family:var(--font-jp); font-size:.42em; font-weight:700; margin-left:4px; }
   .datemark .big .arrow{ margin:0 6px; }
@@ -160,7 +161,7 @@
     transition:transform .12s ease, box-shadow .12s ease;
   }
   .cta:hover{ transform:translate(2px,2px); box-shadow:2px 2px 0 var(--ink); }
-  .cta-row{ display:flex; flex-wrap:wrap; gap:12px; }
+  .cta-row{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
   .cta-row + .cta-row{ margin-top:12px; }
 
   /* ================= クーポンカード ================= */
@@ -169,65 +170,77 @@
     background:#fff; color:var(--ink);
     border:3px solid var(--ink); border-radius:22px;
     box-shadow:8px 8px 0 var(--ink);
-    padding:26px 22px;
+    padding:28px 22px;
   }
-  .coupon .row1{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+  .coupon .row1{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-bottom:16px; }
   .coupon .when, .coupon .badge{
-    display:inline-block; font-family:var(--font-num); font-weight:700; font-size:12.5px; letter-spacing:.03em;
+    display:inline-block; font-family:var(--font-num); font-weight:700; font-size:13px; letter-spacing:.03em;
     padding:6px 13px; border-radius:999px;
   }
   .coupon .when{ background:var(--ink); color:#fff; }
   .coupon .badge{ background:var(--yellow); color:var(--ink); border:2px solid var(--ink); }
-  .coupon .big{
-    font-family:var(--font-display); font-weight:900; font-size:clamp(46px,14vw,76px);
-    line-height:1; color:var(--pink); text-shadow:4px 4px 0 var(--ink); margin:0 0 8px;
+  .coupon .thumb{
+    width:170px; max-width:64%; margin:0 auto 16px;
+    border:3px solid var(--ink); border-radius:16px; overflow:hidden; box-shadow:6px 6px 0 var(--pink);
   }
+  .coupon .thumb img{ width:100%; aspect-ratio:1/1; object-fit:cover; display:block; }
+  .coupon .big{
+    font-family:var(--font-display); font-weight:900; font-size:clamp(48px,15vw,78px);
+    line-height:1; color:var(--pink); margin:0 0 8px;
+  }
+  .coupon .big.txt{ font-size:clamp(30px,8.6vw,46px); }
   .coupon .big .u{ font-family:var(--font-jp); font-size:.26em; font-weight:700; margin-left:4px; color:var(--ink); }
   .coupon .ttl{
     font-family:var(--font-display); font-weight:900; font-size:clamp(17px,4.6vw,21px);
-    line-height:1.4; margin:0 0 8px; color:var(--ink);
+    line-height:1.45; margin:0 0 10px; color:var(--ink);
   }
-  .coupon .cond{ font-size:14.5px; font-weight:700; color:var(--ink-dim); line-height:1.7; margin:0 0 20px; }
+  .coupon .cond{ font-size:16px; font-weight:700; color:var(--ink-dim); line-height:1.75; margin:0 auto 22px; max-width:24em; }
   .coupon .cta{ background:var(--pink); color:#fff; }
 
-  /* ================= 1,000円ポッキリ ================= */
-  .packs{ display:flex; flex-direction:column; gap:14px; margin:24px 0 34px; }
+  /* ================= 1,000円ポッキリ（どーんと大きく） ================= */
+  .packs{ display:flex; flex-direction:column; gap:16px; margin:26px 0 36px; }
   @media (min-width:600px){ .packs{ flex-direction:row; } .pack{ flex:1 1 0; } }
   .pack{
     background:#fff; color:var(--ink);
-    border:3px solid var(--ink); border-radius:18px; box-shadow:6px 6px 0 var(--pink-deep);
-    padding:22px 20px; display:flex; flex-direction:column;
+    border:4px solid var(--ink); border-radius:20px; box-shadow:9px 9px 0 var(--pink-deep);
+    padding:26px 20px; display:flex; flex-direction:column; text-align:center;
   }
-  .pack .pname{ font-weight:700; font-size:15.5px; line-height:1.5; margin:0 0 10px; }
-  .pack .pprice{ font-family:var(--font-display); font-weight:900; font-size:clamp(30px,8vw,40px); color:var(--pink); line-height:1; }
-  .pack .pprice .u{ font-family:var(--font-jp); font-size:.3em; font-weight:700; margin-left:4px; color:var(--ink); }
-  .pack .pnote{ font-size:12.5px; font-weight:700; color:var(--ink-dim); margin:8px 0 16px; }
-  .pack .cta{ margin-top:auto; display:block; text-align:center; padding:13px 16px; font-size:15px; background:var(--pink); color:#fff; }
+  .pack .thumb{
+    width:120px; margin:0 auto 14px;
+    border:3px solid var(--ink); border-radius:14px; overflow:hidden; box-shadow:5px 5px 0 var(--pink);
+  }
+  .pack .thumb img{ width:100%; aspect-ratio:1/1; object-fit:cover; display:block; }
+  .pack .pname{ font-weight:700; font-size:16.5px; line-height:1.5; margin:0 0 8px; }
+  .pack .pprice{ font-family:var(--font-display); font-weight:900; font-size:clamp(46px,14vw,66px); color:var(--pink); line-height:1.05; margin:2px 0 4px; }
+  .pack .pprice .u{ display:block; font-family:var(--font-display); font-size:.34em; font-weight:900; margin-top:2px; color:var(--ink); }
+  .pack .pnote{ font-size:14px; font-weight:700; color:var(--ink-dim); margin:8px 0 18px; }
+  .pack .cta{ margin-top:auto; display:block; text-align:center; padding:14px 16px; font-size:15px; background:var(--pink); color:#fff; }
 
   /* ================= 重ねクーポン（.sec.butter 上） ================= */
   .stack-head{
     font-family:var(--font-display); font-weight:900; font-size:clamp(18px,5vw,24px);
     line-height:1.4; margin:8px 0 8px; color:var(--ink);
   }
-  .ladder{ margin:20px 0 26px; border-top:2px dashed rgba(42,14,30,.45); }
-  .ladder .step{ display:flex; align-items:center; gap:16px; padding:16px 0; border-bottom:2px dashed rgba(42,14,30,.45); }
-  .ladder .no{ font-family:var(--font-display); font-weight:900; font-size:26px; color:var(--pink); flex-shrink:0; }
-  .ladder .what{ flex:1; font-size:17px; font-weight:700; color:var(--ink); }
-  .ladder .off{ font-family:var(--font-display); font-weight:900; font-size:clamp(26px,7.6vw,40px); color:var(--pink); white-space:nowrap; text-shadow:3px 3px 0 var(--ink); }
+  .ladder{ margin:20px auto 26px; max-width:24em; border-top:2px dashed rgba(42,14,30,.45); }
+  .ladder .step{ display:flex; align-items:center; justify-content:center; gap:14px; padding:15px 0; border-bottom:2px dashed rgba(42,14,30,.45); }
+  .ladder .no{ font-family:var(--font-display); font-weight:900; font-size:24px; color:var(--ink); }
+  .ladder .what{ font-size:17px; font-weight:700; color:var(--ink); }
+  .ladder .off{ font-family:var(--font-display); font-weight:900; font-size:clamp(26px,7.6vw,40px); color:var(--ink); white-space:nowrap; }
   .ladder .off .u{ font-family:var(--font-jp); font-size:.34em; font-weight:700; margin-left:3px; }
 
   /* ================= 結び ================= */
-  .closing{ background:var(--pink-deep); color:#fff; padding:80px 0 52px; }
+  .closing{ background:var(--pink-deep); color:#fff; padding:78px 0 52px; }
+  .closing .inner{ text-align:center; }
   .closing h2{
-    margin:0 0 22px; color:var(--yellow); text-shadow:4px 4px 0 rgba(0,0,0,.25);
+    margin:0 0 22px; color:var(--yellow);
     font-family:var(--font-display); font-weight:900;
     font-size:clamp(28px,7.8vw,48px); line-height:1.38;
   }
-  .closing p{ margin:0 0 28px; color:#fff; font-size:clamp(16px,4.2vw,18px); font-weight:700; max-width:30em; line-height:1.9; }
+  .closing p{ margin:0 auto 28px; color:#fff; font-size:clamp(16.5px,4.4vw,18px); font-weight:700; max-width:28em; line-height:1.9; }
   .closing .cta{ background:var(--yellow); color:var(--ink); }
   .closing .fine{
     margin-top:46px; padding-top:24px; border-top:2px dashed rgba(255,255,255,.4);
-    font-size:13px; font-weight:400; color:#fff; opacity:.9; line-height:2.1;
+    font-size:13.5px; font-weight:400; color:#fff; opacity:.9; line-height:2.1;
   }
 
   /* ---- スクロールで静かに現れる（JSが有効なときだけ）---- */
@@ -272,6 +285,7 @@
       <ol>
         <li><a href="#c-fukubukuro"><span class="when num">9/3木–6日</span><span class="what">サブローの日 限定福袋</span><span class="go">→</span></a></li>
         <li><a href="#c-off15"><span class="when num">9/3木–5土</span><span class="what">対象商品 全品15%OFF（先着200名）</span><span class="go">→</span></a></li>
+        <li><a href="#c-keirou"><span class="when num">9/5土</span><span class="what">敬老の日ギフト ポイント10倍</span><span class="go">→</span></a></li>
         <li><a href="#c-off10"><span class="when num">9/6日–11金</span><span class="what">対象商品 全品10%OFF</span><span class="go">→</span></a></li>
         <li><a href="#c-kuwa"><span class="when num">9/10木</span><span class="what">くわタブレット 3袋以上で30%OFF</span><span class="go">→</span></a></li>
         <li><a href="#allperiod"><span class="when num">期間中</span><span class="what">通し企画（1,000円ポッキリ・重ねクーポン）</span><span class="go">→</span></a></li>
@@ -283,7 +297,7 @@
   <section class="sec pink" id="coupons">
     <div class="inner reveal">
       <p class="kicker">COUPON</p>
-      <h2>使えるクーポンは、<br>この4つ。</h2>
+      <h2>使えるクーポンは、<br>この5つ。</h2>
       <p class="sub">日付とボタンだけ見れば大丈夫。上から順にどうぞ。</p>
 
       <div class="clist">
@@ -293,7 +307,8 @@
             <span class="when">9/3(木) → 9/6(日)</span>
             <span class="badge">数量限定</span>
           </div>
-          <p class="big">限定福袋</p>
+          <figure class="thumb"><img src="images/items/0085.jpg" alt="サブローの日 限定福袋" loading="lazy"></figure>
+          <p class="big txt">限定福袋</p>
           <p class="ttl">毎月恒例 サブローの日 限定福袋</p>
           <p class="cond">毎月3〜6日だけの恒例企画。中身がすべて見える福袋です。</p>
           <div class="cta-row"><a class="cta" href="https://www.rakuten.ne.jp/gold/danjiki-dojo/event/201712/20250203.html" target="_blank" rel="noopener">福袋ページを見る ↗</a></div>
@@ -308,6 +323,18 @@
           <p class="ttl">対象商品 全品15%OFF</p>
           <p class="cond">SALE前半の3日間。先着200名に達し次第終了なので、早めにクーポンの受け取りを。</p>
           <div class="cta-row"><a class="cta" href="https://coupon.rakuten.co.jp/getCoupon?getkey=NVpKQy1VTEdULU1UTUctSjVYUA--&rt=" target="_blank" rel="noopener">15%OFFクーポンを受け取る ↗</a></div>
+        </div>
+
+        <div class="coupon" id="c-keirou">
+          <div class="row1">
+            <span class="when">9/5(土) のみ</span>
+            <span class="badge">1日限定</span>
+          </div>
+          <figure class="thumb"><img src="images/items/3004.jpg" alt="敬老の日 優光泉ギフトセット 200ml×4本" loading="lazy"></figure>
+          <p class="big txt">ポイント10倍</p>
+          <p class="ttl">敬老の日ギフト ポイント10倍</p>
+          <p class="cond">敬老の日ギフトの対象商品が、9月5日だけポイント10倍に。優光泉 200ml×4本のギフトセットです。</p>
+          <div class="cta-row"><a class="cta" href="https://item.rakuten.co.jp/danjiki-dojo/3004/" target="_blank" rel="noopener">敬老の日ギフトを見る ↗</a></div>
         </div>
 
         <div class="coupon" id="c-off10">
@@ -325,6 +352,7 @@
             <span class="when">9/10(木) のみ</span>
             <span class="badge">1日限定</span>
           </div>
+          <figure class="thumb"><img src="images/items/5557.jpg" alt="くわタブレット" loading="lazy"></figure>
           <p class="big num">30<span class="u">%OFF</span></p>
           <p class="ttl">くわタブレット 3袋以上で30%OFF</p>
           <p class="cond">くわタブレットを3袋以上ご購入で。9月10日だけのクーポンです。</p>
@@ -348,12 +376,14 @@
 
       <div class="packs">
         <div class="pack">
+          <figure class="thumb"><img src="images/items/1000.jpg" alt="ポケット優光泉 6包" loading="lazy"></figure>
           <p class="pname">ポケット優光泉 6包</p>
           <p class="pprice num">1,000<span class="u">円ポッキリ</span></p>
           <p class="pnote">送料・税込。持ち運べる個包装タイプ</p>
           <a class="cta" href="https://item.rakuten.co.jp/danjiki-dojo/1000/" target="_blank" rel="noopener">商品を見る ↗</a>
         </div>
         <div class="pack">
+          <figure class="thumb"><img src="images/items/4001.jpg" alt="酵素ゼリー ミカン味 6包" loading="lazy"></figure>
           <p class="pname">酵素ゼリー（ミカン味） 6包</p>
           <p class="pprice num">1,000<span class="u">円ポッキリ</span></p>
           <p class="pnote">送料・税込。かんで食べる酵素</p>

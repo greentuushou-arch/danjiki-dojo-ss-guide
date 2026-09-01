@@ -8,7 +8,7 @@
 - 中央1カラム `max-width:750px`
 - 配色：ピンク＋イエローのイベント配色（全面ベタ塗り・無地）。ピンク `#E64C86` / 深ローズ `#C43A70` / ビビッドイエロー `#FFD400` / 生成り `#FFFBF4` / インク `#2A0E1E`
 - フォント：見出し・巨大数字＝**Zen Kaku Gothic New（900）**（Google Fonts／`--font-display`）、本文＝MS Pゴシック太字（`body{font-weight:700}`）、小さめ数字＝**LINE Seed JP**（`fonts/` に Latin・数字サブセットを同梱・OFL）。変更は `:root` の `--font-display` / `--font-jp` / `--font-num`
-- デザイン：極太ピルボタン、太枠＋単色オフセット影のステッカー風カード、傾いたピル型キッカー、割引率は巨大数字（Zen 900＋影）
+- デザイン：全体センター寄せ／**文字の影は無し（枠・カードのオフセット影のみ）**／極太ピルボタン／傾いたピル型キッカー／割引率と1,000円ポッキリは巨大数字（Zen 900）／商品カードにRakutenサムネイル（`images/items/<code>.jpg`）
 - 表記ルール：楽天SALE規定で "SUPER" 単独の英字は禁止 → ラベルは「RAKUTENスーパーSALE」。英字 "SUPER SALE" を使わないこと
 
 ## ページ構成
@@ -16,7 +16,7 @@
 1. FV（`.fv`）… ラベル／見出し／開催期間（9/4 20:00 → 9/11 1:59）／「福袋・一部クーポンは9/3から」注記
 2. カレンダー画像（`.calendar`）… いまは `images/calendar-poster-placeholder.svg`（仮）
 3. 早見表（`.toc`）… 日付 → 企画名、各クーポンカードへのアンカーリンク
-4. クーポン4つ（`.sec.pink` / `.coupon`）… 日付バッジ＋割引の巨大数字＋タイトル＋条件＋ボタン
+4. クーポン5つ（`.sec.pink` / `.coupon`）… 日付バッジ＋（商品ものはサムネイル）＋割引の巨大数字＋タイトル＋条件＋ボタン。全要素センター寄せ・文字影なし
 5. 通し企画（`.sec.butter`）… 1,000円ポッキリ2品＋ポケット優光泉15包の重ねクーポン（20%→45%→無料）
 6. 結び（`.closing`）… ショップ／SALE会場／楽天スーパーSALE会場リンク＋注意書き
 
@@ -33,6 +33,7 @@
 | セクション | 日付 | 内容 | リンク |
 |---|---|---|---|
 | サブローの日 限定福袋 | 9/3–9/6 | 数量限定 | `gold/danjiki-dojo/event/201712/20250203.html` |
+| 敬老の日ギフト ポイント10倍 | 9/5のみ | 優光泉200ml×4本 | `item.rakuten.co.jp/danjiki-dojo/3004/` |
 | 全品15%OFF | 9/3–9/5 | 先着200名 | getkey `NVpKQy1VTEdULU1UTUctSjVYUA--` |
 | 全品10%OFF | 9/6–9/11 1:59 | — | getkey `U0NUQS00SVFXLTBRUjItVUtLSA--` |
 | くわタブレット 30%OFF | 9/10のみ | 3袋以上購入で | getkey `UzdEUC1LRk9HLU9ZUVgtUkhVQg--` |
