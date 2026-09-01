@@ -99,19 +99,17 @@
   .daycal{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:0 0 34px; }
   .dcell{
     flex:0 0 calc(20% - 8px); max-width:100px;
-    display:flex; flex-direction:column; align-items:center; gap:3px;
-    padding:13px 4px 11px; text-decoration:none; color:var(--ink);
+    display:flex; flex-direction:column; align-items:center; gap:4px;
+    padding:14px 4px 13px; text-decoration:none; color:var(--ink);
     background:#fff; border:3px solid var(--ink); border-radius:14px;
     box-shadow:4px 4px 0 var(--pink);
     transition:transform .12s ease, box-shadow .12s ease;
   }
   @media (min-width:600px){ .dcell{ flex:0 0 calc(11.111% - 9px); } }
   .dcell:hover{ transform:translate(2px,2px); box-shadow:2px 2px 0 var(--pink); }
-  .dcell .wd{ font-size:12.5px; font-weight:700; color:var(--ink-dim); }
-  .dcell .dn{ font-family:var(--font-display); font-weight:900; font-size:clamp(23px,6vw,32px); line-height:1; }
-  .dcell .mk{ font-size:11px; font-weight:700; color:var(--pink); line-height:1.15; }
+  .dcell .wd{ font-size:13px; font-weight:700; color:var(--ink-dim); }
+  .dcell .dn{ font-family:var(--font-display); font-weight:900; font-size:clamp(24px,6.6vw,34px); line-height:1; }
   .dcell.special{ background:var(--yellow); }
-  .dcell.special .mk{ color:var(--ink); }
 
   .callist{ margin:0 auto; max-width:560px; padding:0; list-style:none; border-top:3px solid var(--ink); text-align:left; }
   .callist li{ border-bottom:3px solid var(--ink); }
@@ -308,15 +306,15 @@
       </figure>
 
       <div class="daycal" aria-label="日付から探す">
-        <a class="dcell" href="#c-fukubukuro"><span class="wd">木</span><span class="dn num">3</span><span class="mk">福袋</span></a>
-        <a class="dcell" href="#c-off15"><span class="wd">金</span><span class="dn num">4</span><span class="mk">15%</span></a>
-        <a class="dcell special" href="#c-keirou"><span class="wd">土</span><span class="dn num">5</span><span class="mk">敬老</span></a>
-        <a class="dcell" href="#c-off10"><span class="wd">日</span><span class="dn num">6</span><span class="mk">10%</span></a>
-        <a class="dcell" href="#c-off10"><span class="wd">月</span><span class="dn num">7</span><span class="mk">10%</span></a>
-        <a class="dcell" href="#c-off10"><span class="wd">火</span><span class="dn num">8</span><span class="mk">10%</span></a>
-        <a class="dcell" href="#c-off10"><span class="wd">水</span><span class="dn num">9</span><span class="mk">10%</span></a>
-        <a class="dcell special" href="#c-kuwa"><span class="wd">木</span><span class="dn num">10</span><span class="mk">くわ</span></a>
-        <a class="dcell" href="#c-off10"><span class="wd">金</span><span class="dn num">11</span><span class="mk">最終</span></a>
+        <a class="dcell" href="#c-fukubukuro"><span class="wd">木</span><span class="dn num">3</span></a>
+        <a class="dcell" href="#c-off15"><span class="wd">金</span><span class="dn num">4</span></a>
+        <a class="dcell special" href="#c-keirou"><span class="wd">土</span><span class="dn num">5</span></a>
+        <a class="dcell" href="#c-off10"><span class="wd">日</span><span class="dn num">6</span></a>
+        <a class="dcell" href="#c-off10"><span class="wd">月</span><span class="dn num">7</span></a>
+        <a class="dcell" href="#c-off10"><span class="wd">火</span><span class="dn num">8</span></a>
+        <a class="dcell" href="#c-off10"><span class="wd">水</span><span class="dn num">9</span></a>
+        <a class="dcell special" href="#c-kuwa"><span class="wd">木</span><span class="dn num">10</span></a>
+        <a class="dcell" href="#c-off10"><span class="wd">金</span><span class="dn num">11</span></a>
       </div>
 
       <ol class="callist">
@@ -370,7 +368,7 @@
           </div>
           <figure class="thumb"><img src="images/items/3004.jpg" alt="敬老の日 優光泉ギフトセット 200ml×4本" loading="lazy"></figure>
           <p class="big txt">ポイント10倍</p>
-          <p class="ttl">敬老の日ギフト ポイント10倍</p>
+          <p class="ttl">敬老の日ギフトセット 期間限定販売</p>
           <p class="cond">敬老の日ギフトの対象商品が、9月5日だけポイント10倍に。優光泉 200ml×4本のギフトセットです。</p>
           <div class="cta-row"><a class="cta" href="https://item.rakuten.co.jp/danjiki-dojo/3004/" target="_blank" rel="noopener">敬老の日ギフトを見る ↗</a></div>
         </div>
