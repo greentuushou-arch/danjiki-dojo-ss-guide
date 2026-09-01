@@ -92,9 +92,9 @@
     font-size:clamp(31px,8.6vw,54px); line-height:1.3; color:var(--ink);
   }
   /* ▼▼ 後日、正式なSALEカレンダー画像に差し替え（images/ に置いて src を変更） ▼▼ */
-  .calimg{ margin:0 0 30px; }
-  .calimg img{ width:100%; border:4px solid var(--ink); border-radius:20px; box-shadow:10px 10px 0 var(--pink); }
-  .calimg figcaption{ margin-top:14px; font-size:15px; font-weight:500; color:var(--ink-dim); }
+  .calimg{ margin:0 0 26px; }
+  .calimg img{ width:100%; max-width:560px; margin:0 auto; display:block; }
+  .calimg figcaption{ margin-top:16px; font-size:15.5px; font-weight:700; color:var(--ink-dim); }
 
   .daycal{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:0 0 34px; }
   .dcell{
@@ -295,15 +295,12 @@
   </header>
 
   <!-- ================= カレンダー ================= -->
-  <section class="calsec" id="calendar">
+  <section class="calsec" id="calendar" aria-label="SALEカレンダー">
     <div class="inner">
-      <p class="label">SALE CALENDAR</p>
-      <h2>9日間の<br>SALEカレンダー</h2>
 
       <figure class="calimg">
-        <!-- ▼▼ 差し替え：正式なSALEカレンダー画像 ▼▼ -->
-        <img src="images/calendar-poster-placeholder.svg" alt="断食道場SHOP 楽天スーパーSALEカレンダー（準備中）" width="750" height="520">
-        <figcaption>カレンダー画像は準備中です</figcaption>
+        <img src="images/sale-calendar.jpg" alt="断食道場SHOP 楽天スーパーSALE 9日間のSALEカレンダー。9/3〜9/11の日別クーポン・企画一覧" width="1084" height="1591">
+        <figcaption>▼ 日付をタップすると、その日の詳細へ移動します</figcaption>
       </figure>
 
       <div class="daycal" aria-label="日付から探す">
