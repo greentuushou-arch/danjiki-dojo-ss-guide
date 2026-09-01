@@ -16,7 +16,7 @@
 1. FV（`.fv`）… ラベル／見出し／開催期間（9/4 20:00 → 9/11 1:59）／「福袋・一部クーポンは9/3から」注記
 2. カレンダー画像（`.calendar`）… いまは `images/calendar-poster-placeholder.svg`（仮）
 3. 早見表（`.toc`）… 日付 → 企画名、各クーポンカードへのアンカーリンク
-4. クーポン5つ（`.sec.pink` / `.coupon`）… 日付バッジ＋割引の巨大数字＋タイトル＋条件＋ボタン
+4. クーポン4つ（`.sec.pink` / `.coupon`）… 日付バッジ＋割引の巨大数字＋タイトル＋条件＋ボタン
 5. 通し企画（`.sec.butter`）… 1,000円ポッキリ2品＋ポケット優光泉15包の重ねクーポン（20%→45%→無料）
 6. 結び（`.closing`）… ショップ／SALE会場／楽天スーパーSALE会場リンク＋注意書き
 
@@ -33,7 +33,6 @@
 | セクション | 日付 | 内容 | リンク |
 |---|---|---|---|
 | サブローの日 限定福袋 | 9/3–9/6 | 数量限定 | `gold/danjiki-dojo/event/201712/20250203.html` |
-| LINE＆メルマガ限定 30%OFF | 9/4 20:00〜 | 先着10名 | `page.line.me/pqx8126z?openQrModal=true` |
 | 全品15%OFF | 9/3–9/5 | 先着200名 | getkey `NVpKQy1VTEdULU1UTUctSjVYUA--` |
 | 全品10%OFF | 9/6–9/11 1:59 | — | getkey `U0NUQS00SVFXLTBRUjItVUtLSA--` |
 | くわタブレット 30%OFF | 9/10のみ | 3袋以上購入で | getkey `UzdEUC1LRk9HLU9ZUVgtUkhVQg--` |
