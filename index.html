@@ -118,7 +118,7 @@
   .callist a{ display:flex; align-items:center; gap:14px; padding:16px 4px; text-decoration:none; color:var(--ink); }
   .callist .cwhen{
     font-family:var(--font-display); font-weight:900; font-size:clamp(25px,6.6vw,36px);
-    line-height:1; color:var(--pink); flex-shrink:0; min-width:3.3em; text-align:right; white-space:nowrap;
+    line-height:1; color:var(--pink); flex-shrink:0; min-width:3.3em; text-align:left; white-space:nowrap;
   }
   .callist .cwhen .s{ font-size:.5em; color:var(--ink-dim); margin-left:1px; }
   .callist .cwhat{ flex:1; font-weight:700; font-size:clamp(15px,3.9vw,17.5px); line-height:1.4; }
@@ -178,10 +178,20 @@
   }
   .coupon .cd .wd{ font-size:.5em; color:var(--ink-dim); margin:0 3px; }
   .coupon .badge{
-    display:inline-block; margin-top:10px;
+    position:relative;
+    display:inline-block; margin-top:24px;
     font-weight:700; font-size:15px; letter-spacing:.02em;
-    padding:7px 16px; border-radius:999px;
+    padding:8px 16px; border-radius:16px;
     background:var(--yellow); color:var(--ink); border:2px solid var(--ink);
+  }
+  /* 吹き出しのしっぽ（上向き。日付を指す）：インクの縁取り＋イエローの中身 */
+  .coupon .badge::before{
+    content:""; position:absolute; left:22px; top:-13px;
+    border:9px solid transparent; border-bottom:11px solid var(--ink);
+  }
+  .coupon .badge::after{
+    content:""; position:absolute; left:24px; top:-8px;
+    border:7px solid transparent; border-bottom:9px solid var(--yellow);
   }
   .coupon .thumb{
     width:100%; max-width:400px; margin:0 auto 22px;
