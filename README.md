@@ -7,8 +7,9 @@
 - 1ファイル完結：`index.html` に CSS・JS をすべて内包（相対パス）
 - 中央1カラム `max-width:750px`
 - 配色：ピンク＋イエローのイベント配色（全面ベタ塗り・無地）。ピンク `#E64C86` / 深ローズ `#C43A70` / ビビッドイエロー `#FFD400` / 生成り `#FFFBF4` / インク `#2A0E1E`
-- フォント：見出し・巨大数字＝**Zen Kaku Gothic New（900）**（Google Fonts／`--font-display`）、本文＝MS Pゴシック太字（`body{font-weight:700}`）、小さめ数字＝**LINE Seed JP**（`fonts/` に Latin・数字サブセットを同梱・OFL）。変更は `:root` の `--font-display` / `--font-jp` / `--font-num`
-- デザイン：全体センター寄せ／**文字の影は無し（枠・カードのオフセット影のみ）**／極太ピルボタン／傾いたピル型キッカー／割引率と1,000円ポッキリは巨大数字（Zen 900）／商品カードにRakutenサムネイル（`images/items/<code>.jpg`）
+- フォント：**すべて Zen Kaku Gothic New**（Google Fonts、見出し900／本文700／説明500）。`:root` の `--font-display` / `--font-jp` / `--font-num` すべて同じスタック。MS Pゴシック・LINE Seed JP は廃止（`fonts/` フォルダも削除）
+- デザイン：全体センター寄せ／文字の影なし（枠・カードのオフセット影のみ）／極太ピルボタン／傾いたピル型キッカー／割引率と1,000円ポッキリは巨大数字（Zen 900）
+- 写真：商品カードに大きめの Rakuten サムネイル（`images/items/<code>.jpg`、1:1・太枠）。写真つきクーポンはデスクトップで［写真260px｜内容］の2カラム、スマホは縦積み。小さい文字は全体的に拡大（説明17.5px・バッジ15.5px 目安）
 - 表記ルール：楽天SALE規定で "SUPER" 単独の英字は禁止 → ラベルは「RAKUTENスーパーSALE」。英字 "SUPER SALE" を使わないこと
 
 ## ページ構成

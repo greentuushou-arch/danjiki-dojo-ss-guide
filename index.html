@@ -8,28 +8,14 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 <style>
-  /* ===== 数字・欧文用：LINE Seed JP（Latin/数字/記号のみサブセット同梱・OFL） ===== */
-  @font-face{
-    font-family:"LINE Seed JP";
-    font-style:normal; font-weight:400; font-display:swap;
-    src:url("fonts/line-seed-jp-num-Rg.woff2") format("woff2");
-    unicode-range:U+0020-007E,U+00A0,U+00D7,U+2013-2014,U+2018-201D,U+2026,U+2192,U+2197,U+2212,U+2500,U+FF0F;
-  }
-  @font-face{
-    font-family:"LINE Seed JP";
-    font-style:normal; font-weight:700; font-display:swap;
-    src:url("fonts/line-seed-jp-num-Bd.woff2") format("woff2");
-    unicode-range:U+0020-007E,U+00A0,U+00D7,U+2013-2014,U+2018-201D,U+2026,U+2192,U+2197,U+2212,U+2500,U+FF0F;
-  }
-
   :root{
-    /* ▼▼ フォント：見出し・巨大数字＝Zen Kaku Gothic New(900)／本文＝MS Pゴシック太字／小さめ数字＝LINE Seed JP ▼▼ */
-    --font-display:"Zen Kaku Gothic New","MS PGothic","MS Pゴシック",sans-serif;
-    --font-jp:"MS PGothic","MS Pゴシック","Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
-    --font-num:"LINE Seed JP","MS PGothic","MS Pゴシック",sans-serif;
+    /* ▼▼ フォント：見出しも本文も数字も、すべて Zen Kaku Gothic New（見出し900／本文700／説明500） ▼▼ */
+    --font-display:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+    --font-jp:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+    --font-num:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
 
     /* ▼▼ 配色：ピンク＋イエローのイベント配色（全面ベタ塗り） ▼▼ */
     --pink:#E64C86;        /* 上品なローズピンク：メインアクセント・pinkセクション背景 */
@@ -64,8 +50,8 @@
   /* 共通：ステッカー風のキッカー（ピル型・傾き・オフセット影） */
   .kicker{
     display:inline-block; margin:0 0 20px;
-    font-family:var(--font-num); font-weight:700; font-size:14px; letter-spacing:.1em;
-    padding:9px 18px; border-radius:999px; transform:rotate(-2deg);
+    font-family:var(--font-num); font-weight:700; font-size:15.5px; letter-spacing:.06em;
+    padding:10px 20px; border-radius:999px; transform:rotate(-2deg);
     box-shadow:4px 4px 0 rgba(0,0,0,.16);
   }
 
@@ -74,9 +60,9 @@
   .fv .inner{ text-align:center; }
   .fv .eyebrow{
     display:inline-block; margin:0 0 24px;
-    font-family:var(--font-jp); font-weight:700; font-size:15px; letter-spacing:.1em;
+    font-family:var(--font-jp); font-weight:700; font-size:17px; letter-spacing:.04em;
     background:var(--ink); color:var(--yellow);
-    padding:10px 20px; border-radius:999px; transform:rotate(-2.5deg);
+    padding:11px 22px; border-radius:999px; transform:rotate(-2.5deg);
     box-shadow:4px 4px 0 rgba(0,0,0,.2);
   }
   .fv h1{
@@ -87,43 +73,43 @@
   }
   .fv .lead{
     margin:0 auto 30px; max-width:24em;
-    font-size:clamp(17px,4.6vw,20px); font-weight:700; line-height:1.85; color:#fff;
+    font-size:clamp(18px,4.8vw,22px); font-weight:700; line-height:1.85; color:#fff;
   }
-  .period{ max-width:440px; margin:0 auto; border:3px solid #fff; border-radius:20px; padding:22px; background:rgba(255,255,255,.12); }
+  .period{ max-width:460px; margin:0 auto; border:3px solid #fff; border-radius:20px; padding:24px; background:rgba(255,255,255,.12); }
   .period .tag{
     display:inline-block; margin-bottom:12px;
-    font-family:var(--font-num); font-size:13px; letter-spacing:.14em; font-weight:700;
-    background:var(--yellow); color:var(--ink); padding:6px 14px; border-radius:999px;
+    font-family:var(--font-num); font-size:14.5px; letter-spacing:.06em; font-weight:700;
+    background:var(--yellow); color:var(--ink); padding:7px 16px; border-radius:999px;
   }
   .period .range{
     font-family:var(--font-num); font-weight:700;
-    font-size:clamp(23px,6.4vw,34px);
+    font-size:clamp(24px,6.4vw,35px);
     display:flex; flex-wrap:wrap; align-items:baseline; justify-content:center; gap:6px 12px; color:#fff;
   }
-  .period .range small{ font-size:.5em; color:#fff; font-weight:700; opacity:.85; }
+  .period .range small{ font-size:.56em; color:#fff; font-weight:700; opacity:.9; }
   .period .range .arrow{ color:var(--yellow); }
-  .period .note{ margin:12px 0 0; font-size:15px; font-weight:700; color:#fff; opacity:.9; }
+  .period .note{ margin:14px 0 0; font-size:16.5px; font-weight:700; color:#fff; opacity:.95; }
 
   /* ================= カレンダー画像 ================= */
   /* ▼▼ 後日、正式なSALEカレンダー画像に差し替え（images/ に置いて src を変更） ▼▼ */
   .calendar{ margin:0; padding:36px 0 30px; background:var(--cream); text-align:center; }
   .calendar img{ width:100%; border:4px solid var(--ink); border-radius:20px; box-shadow:10px 10px 0 var(--pink); }
-  .calendar figcaption{ padding:18px 20px 0; font-size:16px; font-weight:700; color:var(--ink-dim); }
+  .calendar figcaption{ padding:18px 20px 0; font-size:17px; font-weight:700; color:var(--ink-dim); }
 
   /* ================= 早見表 ================= */
-  .toc{ background:var(--yellow-soft); color:var(--ink); padding:44px 0 40px; text-align:center; }
+  .toc{ background:var(--yellow-soft); color:var(--ink); padding:46px 0 42px; text-align:center; }
   .toc .label{
     display:inline-block; margin:0 0 14px;
-    font-family:var(--font-num); font-size:13px; font-weight:700; letter-spacing:.16em;
-    background:var(--ink); color:var(--yellow); padding:8px 16px; border-radius:999px; transform:rotate(-2deg);
+    font-family:var(--font-num); font-size:15px; font-weight:700; letter-spacing:.08em;
+    background:var(--ink); color:var(--yellow); padding:9px 18px; border-radius:999px; transform:rotate(-2deg);
   }
-  .toc .lead{ margin:0 0 22px; font-size:17.5px; font-weight:700; color:var(--ink); }
+  .toc .lead{ margin:0 0 24px; font-size:19px; font-weight:700; color:var(--ink); }
   .toc ol{ margin:0; padding:0; list-style:none; border-top:2px solid var(--ink); }
   .toc li{ border-bottom:2px solid var(--ink); }
-  .toc a{ display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:6px 12px; padding:15px 2px; text-decoration:none; color:var(--ink); }
-  .toc .when{ font-family:var(--font-num); font-weight:700; font-size:13.5px; color:var(--ink-dim); white-space:nowrap; }
-  .toc .what{ font-weight:700; font-size:16.5px; line-height:1.4; }
-  .toc a .go{ color:var(--pink); font-size:20px; }
+  .toc a{ display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:6px 14px; padding:17px 2px; text-decoration:none; color:var(--ink); }
+  .toc .when{ font-family:var(--font-num); font-weight:700; font-size:16px; color:var(--ink-dim); white-space:nowrap; }
+  .toc .what{ font-weight:700; font-size:18.5px; line-height:1.45; }
+  .toc a .go{ color:var(--pink); font-size:23px; }
   .toc a:hover .what{ color:var(--pink); }
 
   /* ================= セクション共通 ================= */
@@ -135,28 +121,28 @@
   .sec.butter .kicker{ background:var(--ink); color:var(--yellow); }
 
   .sec h2{
-    margin:0 0 10px;
+    margin:0 0 12px;
     font-family:var(--font-display); font-weight:900;
-    font-size:clamp(30px,8.2vw,54px); line-height:1.36; letter-spacing:0;
+    font-size:clamp(31px,8.4vw,56px); line-height:1.36; letter-spacing:0;
   }
   .sec.pink h2{ color:#fff; }
   .sec.butter h2{ color:var(--ink); }
-  .sec .sub{ margin:0 auto 30px; max-width:30em; font-size:clamp(16px,4.4vw,19px); font-weight:700; line-height:1.85; }
+  .sec .sub{ margin:0 auto 32px; max-width:30em; font-size:clamp(17.5px,4.6vw,21px); font-weight:700; line-height:1.8; }
   .sec.pink .sub{ color:#fff; }
   .sec.butter .sub{ color:var(--ink); }
 
   .datemark{ display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:10px 14px; margin:0 0 18px; font-family:var(--font-display); font-weight:900; }
-  .datemark .big{ font-size:clamp(30px,8.6vw,48px); line-height:1.1; }
-  .datemark .big .wd{ font-family:var(--font-jp); font-size:.42em; font-weight:700; margin-left:4px; }
+  .datemark .big{ font-size:clamp(31px,8.8vw,50px); line-height:1.1; }
+  .datemark .big .wd{ font-family:var(--font-jp); font-size:.44em; font-weight:700; margin-left:4px; }
   .datemark .big .arrow{ margin:0 6px; }
   .sec.butter .datemark .big{ color:var(--ink); }
-  .datemark .time{ font-family:var(--font-num); font-weight:700; font-size:13px; padding:6px 14px; border-radius:999px; background:var(--ink); color:#fff; }
+  .datemark .time{ font-family:var(--font-num); font-weight:700; font-size:15px; padding:7px 16px; border-radius:999px; background:var(--ink); color:#fff; }
 
   /* ---- ボタン（極太ピル＋オフセット影） ---- */
   .cta{
     display:inline-block; text-decoration:none;
-    font-family:var(--font-jp); font-weight:700; font-size:clamp(15px,4vw,17px);
-    padding:16px 30px; border:3px solid var(--ink); border-radius:999px;
+    font-family:var(--font-jp); font-weight:700; font-size:clamp(16px,4.2vw,18.5px);
+    padding:17px 32px; border:3px solid var(--ink); border-radius:999px;
     box-shadow:5px 5px 0 var(--ink);
     transition:transform .12s ease, box-shadow .12s ease;
   }
@@ -165,68 +151,83 @@
   .cta-row + .cta-row{ margin-top:12px; }
 
   /* ================= クーポンカード ================= */
-  .clist{ display:flex; flex-direction:column; gap:20px; }
+  .clist{ display:flex; flex-direction:column; gap:22px; }
   .coupon{
     background:#fff; color:var(--ink);
     border:3px solid var(--ink); border-radius:22px;
     box-shadow:8px 8px 0 var(--ink);
-    padding:28px 22px;
+    padding:28px 24px;
   }
-  .coupon .row1{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-bottom:16px; }
+  .coupon .row1{ display:flex; flex-wrap:wrap; justify-content:center; gap:9px; margin-bottom:18px; }
   .coupon .when, .coupon .badge{
-    display:inline-block; font-family:var(--font-num); font-weight:700; font-size:13px; letter-spacing:.03em;
-    padding:6px 13px; border-radius:999px;
+    display:inline-block; font-family:var(--font-num); font-weight:700; font-size:15.5px; letter-spacing:.02em;
+    padding:8px 16px; border-radius:999px;
   }
   .coupon .when{ background:var(--ink); color:#fff; }
   .coupon .badge{ background:var(--yellow); color:var(--ink); border:2px solid var(--ink); }
   .coupon .thumb{
-    width:170px; max-width:64%; margin:0 auto 16px;
+    width:100%; max-width:400px; margin:0 auto 22px;
     border:3px solid var(--ink); border-radius:16px; overflow:hidden; box-shadow:6px 6px 0 var(--pink);
   }
   .coupon .thumb img{ width:100%; aspect-ratio:1/1; object-fit:cover; display:block; }
   .coupon .big{
-    font-family:var(--font-display); font-weight:900; font-size:clamp(48px,15vw,78px);
+    font-family:var(--font-display); font-weight:900; font-size:clamp(46px,13.5vw,74px);
     line-height:1; color:var(--pink); margin:0 0 8px;
   }
-  .coupon .big.txt{ font-size:clamp(30px,8.6vw,46px); }
-  .coupon .big .u{ font-family:var(--font-jp); font-size:.26em; font-weight:700; margin-left:4px; color:var(--ink); }
+  .coupon .big.txt{ font-size:clamp(33px,9vw,48px); }
+  .coupon .big .u{ font-family:var(--font-jp); font-size:.3em; font-weight:700; margin-left:4px; color:var(--ink); }
   .coupon .ttl{
-    font-family:var(--font-display); font-weight:900; font-size:clamp(17px,4.6vw,21px);
-    line-height:1.45; margin:0 0 10px; color:var(--ink);
+    font-family:var(--font-display); font-weight:900; font-size:clamp(19px,5vw,24px);
+    line-height:1.45; margin:0 0 12px; color:var(--ink);
   }
-  .coupon .cond{ font-size:16px; font-weight:700; color:var(--ink-dim); line-height:1.75; margin:0 auto 22px; max-width:24em; }
+  .coupon .cond{ font-size:17.5px; font-weight:700; color:var(--ink-dim); line-height:1.8; margin:0 auto 24px; max-width:24em; }
   .coupon .cta{ background:var(--pink); color:#fff; }
 
+  /* 写真つきカードは、デスクトップで［写真｜内容］の2カラムに（バランス重視） */
+  @media (min-width:620px){
+    .coupon.has-photo{
+      display:grid; grid-template-columns:260px 1fr; column-gap:30px; row-gap:2px;
+      grid-template-areas:"img row1" "img big" "img ttl" "img cond" "img cta";
+      align-content:center; text-align:left;
+    }
+    .coupon.has-photo .row1{ grid-area:row1; justify-content:flex-start; margin:0 0 10px; }
+    .coupon.has-photo .thumb{ grid-area:img; align-self:center; margin:0; max-width:none; }
+    .coupon.has-photo .big{ grid-area:big; }
+    .coupon.has-photo .ttl{ grid-area:ttl; }
+    .coupon.has-photo .cond{ grid-area:cond; margin:6px 0 18px; max-width:none; }
+    .coupon.has-photo .cta-row{ grid-area:cta; justify-content:flex-start; }
+  }
+
   /* ================= 1,000円ポッキリ（どーんと大きく） ================= */
-  .packs{ display:flex; flex-direction:column; gap:16px; margin:26px 0 36px; }
+  .packs{ display:flex; flex-direction:column; gap:18px; margin:28px 0 38px; }
   @media (min-width:600px){ .packs{ flex-direction:row; } .pack{ flex:1 1 0; } }
   .pack{
     background:#fff; color:var(--ink);
     border:4px solid var(--ink); border-radius:20px; box-shadow:9px 9px 0 var(--pink-deep);
-    padding:26px 20px; display:flex; flex-direction:column; text-align:center;
+    padding:26px 22px; display:flex; flex-direction:column; text-align:center;
   }
   .pack .thumb{
-    width:120px; margin:0 auto 14px;
+    width:100%; max-width:320px; margin:0 auto 16px;
     border:3px solid var(--ink); border-radius:14px; overflow:hidden; box-shadow:5px 5px 0 var(--pink);
   }
   .pack .thumb img{ width:100%; aspect-ratio:1/1; object-fit:cover; display:block; }
-  .pack .pname{ font-weight:700; font-size:16.5px; line-height:1.5; margin:0 0 8px; }
+  .pack .pname{ font-weight:700; font-size:18.5px; line-height:1.5; margin:0 0 8px; }
   .pack .pprice{ font-family:var(--font-display); font-weight:900; font-size:clamp(46px,14vw,66px); color:var(--pink); line-height:1.05; margin:2px 0 4px; }
-  .pack .pprice .u{ display:block; font-family:var(--font-display); font-size:.34em; font-weight:900; margin-top:2px; color:var(--ink); }
-  .pack .pnote{ font-size:14px; font-weight:700; color:var(--ink-dim); margin:8px 0 18px; }
-  .pack .cta{ margin-top:auto; display:block; text-align:center; padding:14px 16px; font-size:15px; background:var(--pink); color:#fff; }
+  .pack .pprice .u{ display:block; font-family:var(--font-display); font-size:.4em; font-weight:900; margin-top:2px; color:var(--ink); }
+  .pack .pnote{ font-size:16px; font-weight:700; color:var(--ink-dim); margin:10px 0 20px; }
+  .pack .cta{ margin-top:auto; display:block; text-align:center; padding:15px 16px; font-size:16.5px; background:var(--pink); color:#fff; }
 
   /* ================= 重ねクーポン（.sec.butter 上） ================= */
   .stack-head{
-    font-family:var(--font-display); font-weight:900; font-size:clamp(18px,5vw,24px);
+    font-family:var(--font-display); font-weight:900; font-size:clamp(20px,5.4vw,27px);
     line-height:1.4; margin:8px 0 8px; color:var(--ink);
   }
   .ladder{ margin:20px auto 26px; max-width:24em; border-top:2px dashed rgba(42,14,30,.45); }
-  .ladder .step{ display:flex; align-items:center; justify-content:center; gap:14px; padding:15px 0; border-bottom:2px dashed rgba(42,14,30,.45); }
-  .ladder .no{ font-family:var(--font-display); font-weight:900; font-size:24px; color:var(--ink); }
-  .ladder .what{ font-size:17px; font-weight:700; color:var(--ink); }
-  .ladder .off{ font-family:var(--font-display); font-weight:900; font-size:clamp(26px,7.6vw,40px); color:var(--ink); white-space:nowrap; }
-  .ladder .off .u{ font-family:var(--font-jp); font-size:.34em; font-weight:700; margin-left:3px; }
+  .ladder .step{ display:flex; align-items:center; justify-content:center; gap:14px; padding:16px 0; border-bottom:2px dashed rgba(42,14,30,.45); }
+  .ladder .no{ font-family:var(--font-display); font-weight:900; font-size:26px; color:var(--ink); }
+  .ladder .what{ font-size:19px; font-weight:700; color:var(--ink); }
+  .ladder .off{ font-family:var(--font-display); font-weight:900; font-size:clamp(27px,7.8vw,42px); color:var(--ink); white-space:nowrap; }
+  .ladder .off .u{ font-family:var(--font-jp); font-size:.4em; font-weight:700; margin-left:3px; }
 
   /* ================= 結び ================= */
   .closing{ background:var(--pink-deep); color:#fff; padding:78px 0 52px; }
@@ -234,13 +235,13 @@
   .closing h2{
     margin:0 0 22px; color:var(--yellow);
     font-family:var(--font-display); font-weight:900;
-    font-size:clamp(28px,7.8vw,48px); line-height:1.38;
+    font-size:clamp(29px,7.8vw,50px); line-height:1.38;
   }
-  .closing p{ margin:0 auto 28px; color:#fff; font-size:clamp(16.5px,4.4vw,18px); font-weight:700; max-width:28em; line-height:1.9; }
+  .closing p{ margin:0 auto 28px; color:#fff; font-size:clamp(17px,4.6vw,19.5px); font-weight:700; max-width:28em; line-height:1.9; }
   .closing .cta{ background:var(--yellow); color:var(--ink); }
   .closing .fine{
     margin-top:46px; padding-top:24px; border-top:2px dashed rgba(255,255,255,.4);
-    font-size:13.5px; font-weight:400; color:#fff; opacity:.9; line-height:2.1;
+    font-size:15px; font-weight:500; color:#fff; opacity:.92; line-height:2;
   }
 
   /* ---- スクロールで静かに現れる（JSが有効なときだけ）---- */
@@ -302,7 +303,7 @@
 
       <div class="clist">
 
-        <div class="coupon" id="c-fukubukuro">
+        <div class="coupon has-photo" id="c-fukubukuro">
           <div class="row1">
             <span class="when">9/3(木) → 9/6(日)</span>
             <span class="badge">数量限定</span>
@@ -325,7 +326,7 @@
           <div class="cta-row"><a class="cta" href="https://coupon.rakuten.co.jp/getCoupon?getkey=NVpKQy1VTEdULU1UTUctSjVYUA--&rt=" target="_blank" rel="noopener">15%OFFクーポンを受け取る ↗</a></div>
         </div>
 
-        <div class="coupon" id="c-keirou">
+        <div class="coupon has-photo" id="c-keirou">
           <div class="row1">
             <span class="when">9/5(土) のみ</span>
             <span class="badge">1日限定</span>
@@ -347,7 +348,7 @@
           <div class="cta-row"><a class="cta" href="https://coupon.rakuten.co.jp/getCoupon?getkey=U0NUQS00SVFXLTBRUjItVUtLSA--&rt=" target="_blank" rel="noopener">10%OFFクーポンを受け取る ↗</a></div>
         </div>
 
-        <div class="coupon" id="c-kuwa">
+        <div class="coupon has-photo" id="c-kuwa">
           <div class="row1">
             <span class="when">9/10(木) のみ</span>
             <span class="badge">1日限定</span>
