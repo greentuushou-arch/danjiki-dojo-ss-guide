@@ -198,6 +198,13 @@
     border:3px solid var(--ink); border-radius:16px; overflow:hidden; box-shadow:6px 6px 0 var(--pink);
   }
   .coupon .thumb img{ width:100%; aspect-ratio:1/1; object-fit:cover; display:block; }
+  /* 横長のクーポンバナー（画像自体がクーポンリンク） */
+  .coupon .banner{
+    display:block; width:100%; max-width:520px; margin:6px auto 22px;
+    border:3px solid var(--ink); border-radius:14px; overflow:hidden; box-shadow:6px 6px 0 var(--pink);
+  }
+  .coupon .banner img{ width:100%; height:auto; display:block; }
+  .coupon .banner:hover{ box-shadow:3px 3px 0 var(--pink); }
   .coupon .big{
     font-family:var(--font-display); font-weight:900; font-size:clamp(46px,13.5vw,74px);
     line-height:1; color:var(--pink); margin:0 0 8px;
@@ -327,7 +334,7 @@
         <li><a href="#c-fukubukuro"><span class="cwhen num">9/3<span class="s">–6</span></span><span class="cwhat">サブローの日 限定福袋</span><span class="go">→</span></a></li>
         <li><a href="#c-off15"><span class="cwhen num">9/3<span class="s">–5</span></span><span class="cwhat">対象商品 全品15%OFF（先着200名）</span><span class="go">→</span></a></li>
         <li><a href="#c-keirou"><span class="cwhen num">9/5</span><span class="cwhat">敬老の日ギフト ポイント10倍</span><span class="go">→</span></a></li>
-        <li><a href="#c-off10"><span class="cwhen num">9/6<span class="s">–11</span></span><span class="cwhat">対象商品 全品10%OFF</span><span class="go">→</span></a></li>
+        <li><a href="#c-off10"><span class="cwhen num">通し</span><span class="cwhat">対象商品 全品10%OFF（9/4 20:00〜9/11 1:59）</span><span class="go">→</span></a></li>
         <li><a href="#c-kuwa"><span class="cwhen num">9/10</span><span class="cwhat">くわタブレット 3袋以上で30%OFF</span><span class="go">→</span></a></li>
         <li><a href="#allperiod"><span class="cwhen num">通し</span><span class="cwhat">通し企画（1,000円ポッキリ・重ねクーポン）</span><span class="go">→</span></a></li>
       </ol>
@@ -360,9 +367,10 @@
             <span class="cd num">9/3<span class="wd">木</span> → 9/5<span class="wd">土</span></span>
             <span class="badge">先着200名</span>
           </div>
-          <p class="big num">15<span class="u">%OFF</span></p>
-          <p class="ttl">対象商品 全品15%OFF</p>
-          <p class="cond">SALE前半の3日間。先着200名に達し次第終了なので、早めにクーポンの受け取りを。</p>
+          <a class="banner" href="https://coupon.rakuten.co.jp/getCoupon?getkey=NVpKQy1VTEdULU1UTUctSjVYUA--&rt=" target="_blank" rel="noopener">
+            <img src="images/coupon15off.png" alt="対象商品 先着15%OFFクーポン SPECIAL COUPON" width="1516" height="551" loading="lazy">
+          </a>
+          <p class="cond">SALE前半の3日間だけ。先着200名に達し次第終了なので、早めにクーポンの受け取りを。</p>
           <div class="cta-row"><a class="cta" href="https://coupon.rakuten.co.jp/getCoupon?getkey=NVpKQy1VTEdULU1UTUctSjVYUA--&rt=" target="_blank" rel="noopener">15%OFFクーポンを受け取る ↗</a></div>
         </div>
 
@@ -380,11 +388,13 @@
 
         <div class="coupon" id="c-off10">
           <div class="cdate">
-            <span class="cd num">9/6<span class="wd">日</span> → 9/11<span class="wd">金</span></span>
+            <span class="cd num">通し</span>
+            <span class="badge">9/4 20:00 〜 9/11 1:59</span>
           </div>
-          <p class="big num">10<span class="u">%OFF</span></p>
-          <p class="ttl">対象商品 全品10%OFF</p>
-          <p class="cond">SALE後半から最終日まで。最終日 9月11日 1:59 まで使えます。</p>
+          <a class="banner" href="https://coupon.rakuten.co.jp/getCoupon?getkey=U0NUQS00SVFXLTBRUjItVUtLSA--&rt=" target="_blank" rel="noopener">
+            <img src="images/coupon10off.png" alt="対象商品 先着10%OFFクーポン 2026/9/4 20:00〜2026/9/11 01:59" width="1516" height="551" loading="lazy">
+          </a>
+          <p class="cond">SALE期間中ずっと使えます。先着の15%OFFが終了しても、こちらでお得にどうぞ。</p>
           <div class="cta-row"><a class="cta" href="https://coupon.rakuten.co.jp/getCoupon?getkey=U0NUQS00SVFXLTBRUjItVUtLSA--&rt=" target="_blank" rel="noopener">10%OFFクーポンを受け取る ↗</a></div>
         </div>
 
