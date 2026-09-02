@@ -54,22 +54,12 @@
   }
 
   /* ================= FV ================= */
-  .fv{ padding:0 0 60px; background:var(--pink); color:#fff; text-align:center; }
-  .fv-img{ width:100%; display:block; margin:0 0 34px; }
-  .period{ max-width:460px; margin:0 auto; border:3px solid #fff; border-radius:20px; padding:24px; background:rgba(255,255,255,.12); }
-  .period .tag{
-    display:inline-block; margin-bottom:12px;
-    font-size:14.5px; letter-spacing:.06em; font-weight:700;
-    background:var(--yellow); color:var(--ink); padding:7px 16px; border-radius:999px;
+  .fv{ padding:0; background:var(--pink); color:#fff; text-align:center; }
+  .fv-img{ width:100%; display:block; margin:0; }
+  .fv .note{
+    margin:0; padding:16px 20px 20px;
+    font-size:15.5px; font-weight:700; color:#fff; line-height:1.7;
   }
-  .period .range{
-    font-family:var(--font-num); font-weight:700;
-    font-size:clamp(24px,6.4vw,35px);
-    display:flex; flex-wrap:wrap; align-items:baseline; justify-content:center; gap:6px 12px; color:#fff;
-  }
-  .period .range small{ font-size:.56em; color:#fff; font-weight:700; opacity:.9; }
-  .period .range .arrow{ color:var(--yellow); }
-  .period .note{ margin:14px 0 0; font-size:16.5px; font-weight:700; color:#fff; opacity:.95; }
 
   /* ================= カレンダー（画像＋日付ストリップ＋一覧） ================= */
   .calsec{ background:var(--yellow-soft); color:var(--ink); padding:56px 0 54px; text-align:center; }
@@ -281,18 +271,8 @@
 
   <!-- ================= FV ================= -->
   <header class="fv">
-    <img class="fv-img" src="images/fv-banner.jpg" alt="Rakuten スーパーSALE ファスティング始めるなら今！ 断食道場SHOP 9日間のSALEカレンダー" width="1600" height="1468">
-    <div class="inner">
-      <div class="period">
-        <span class="tag">楽天スーパーSALE</span>
-        <span class="range num">
-          <span>9/4 <small>fri 20:00</small></span>
-          <span class="arrow">→</span>
-          <span>9/11 <small>fri 01:59</small></span>
-        </span>
-        <p class="note">※ サブローの日限定福袋・一部クーポンは 9/3 から始まります。</p>
-      </div>
-    </div>
+    <img class="fv-img" src="images/fv-banner.jpg" alt="楽天スーパーSALE 9/4 fri 20:00 - 9/11 fri 01:59 ファスティング始めるなら今！ 断食道場SHOP 9日間のSALEカレンダー" width="1400" height="1284">
+    <p class="note">※ サブローの日 限定福袋・一部クーポンは 9/3 から始まります。</p>
   </header>
 
   <!-- ================= カレンダー ================= -->
