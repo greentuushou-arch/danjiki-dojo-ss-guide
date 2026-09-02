@@ -53,6 +53,15 @@
     font-weight:700; font-size:15px; letter-spacing:.2em;
   }
 
+  /* ================= サイトヘッダー ================= */
+  .topbar{ background:var(--ink); text-align:center; }
+  .topbar a{
+    display:block; padding:14px 16px; text-decoration:none; color:#fff;
+    font-family:var(--font-display); font-weight:900; font-size:15px; letter-spacing:.12em;
+  }
+  .topbar a .ext{ font-size:.85em; margin-left:6px; color:var(--yellow); }
+  .topbar a:hover{ color:var(--yellow); }
+
   /* ================= FV ================= */
   .fv{ padding:0; background:var(--pink); color:#fff; text-align:center; }
   .fv-img{ width:100%; display:block; margin:0; }
@@ -268,6 +277,11 @@
 </head>
 <body>
 <div class="page">
+
+  <!-- ================= サイトヘッダー ================= -->
+  <div class="topbar">
+    <a href="https://www.rakuten.co.jp/danjiki-dojo/" target="_blank" rel="noopener">断食道場ショップ<span class="ext">↗</span></a>
+  </div>
 
   <!-- ================= FV ================= -->
   <header class="fv">
