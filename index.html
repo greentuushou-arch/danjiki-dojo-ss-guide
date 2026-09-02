@@ -120,8 +120,10 @@
   .sec .inner{ text-align:center; }
   .sec.pink{ background:var(--pink); color:#fff; }
   .sec.butter{ background:var(--yellow); color:var(--ink); }
+  .sec.cream{ background:var(--cream); color:var(--ink); }
   .sec.pink .kicker{ color:#fff; }
   .sec.butter .kicker{ color:var(--ink); }
+  .sec.cream .kicker{ color:var(--ink-dim); }
 
   .sec h2{
     margin:0 0 12px;
@@ -243,6 +245,15 @@
   .ladder .what{ font-size:19px; font-weight:700; color:var(--ink); }
   .ladder .off{ font-family:var(--font-display); font-weight:900; font-size:clamp(27px,7.8vw,42px); color:var(--ink); white-space:nowrap; }
   .ladder .off .u{ font-family:var(--font-jp); font-size:.4em; font-weight:700; margin-left:3px; }
+
+  /* ================= ラインナップ（SALE対象商品バナー） ================= */
+  .lineup{ padding:70px 0 66px; }
+  .lgrid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:10px 0 30px; }
+  @media (min-width:600px){ .lgrid{ grid-template-columns:repeat(3,1fr); gap:18px; } }
+  .lcard{ display:block; text-decoration:none; }
+  .lcard img{ width:100%; height:auto; display:block; border-radius:8px; }
+  .lcard:hover{ opacity:.9; }
+  .lnote{ margin:6px auto 0; max-width:34em; font-size:14.5px; font-weight:500; color:var(--ink-dim); line-height:2; text-align:left; }
 
   /* ================= 結び ================= */
   .closing{ background:var(--pink-deep); color:#fff; padding:78px 0 52px; }
@@ -434,6 +445,36 @@
     </div>
   </section>
 
+  <!-- ================= ラインナップ ================= -->
+  <section class="sec cream lineup" id="lineup">
+    <div class="inner reveal">
+      <p class="kicker">LINE UP</p>
+      <h2>SALE対象の<br>優光泉ラインナップ</h2>
+      <p class="sub">気になる商品をタップすると、楽天の商品ページへ移動します。</p>
+
+      <div class="lgrid">
+        <a class="lcard" href="https://item.rakuten.co.jp/danjiki-dojo/7003/" target="_blank" rel="noopener"><img src="images/lineup/01.jpg" alt="ポケット優光泉 ミカン 15包（6月4日発売・20%OFFクーポンで2,333円）" width="900" height="1350" loading="lazy"></a>
+        <a class="lcard" href="https://item.rakuten.co.jp/danjiki-dojo/0090/" target="_blank" rel="noopener"><img src="images/lineup/02.jpg" alt="優光泉 スタンダード ボトル 600ml（15%OFFクーポン対象・4,700円）" width="900" height="1350" loading="lazy"></a>
+        <a class="lcard" href="https://item.rakuten.co.jp/danjiki-dojo/7001/" target="_blank" rel="noopener"><img src="images/lineup/03.jpg" alt="優光泉 ミカン ボトル 600ml（10%OFFクーポン対象・4,700円）" width="900" height="1350" loading="lazy"></a>
+        <a class="lcard" href="https://item.rakuten.co.jp/danjiki-dojo/0037_1/" target="_blank" rel="noopener"><img src="images/lineup/04.jpg" alt="優光泉 濃縮発酵和漢ドリンク 600ml（15%OFFクーポン対象・4,700円）" width="900" height="1350" loading="lazy"></a>
+        <a class="lcard" href="https://item.rakuten.co.jp/danjiki-dojo/0040/" target="_blank" rel="noopener"><img src="images/lineup/05.jpg" alt="バスクレンチーム26 薬用酵素入浴剤（15%OFFクーポン対象・2,530円）" width="900" height="1350" loading="lazy"></a>
+        <a class="lcard" href="https://item.rakuten.co.jp/danjiki-dojo/5557/" target="_blank" rel="noopener"><img src="images/lineup/06.jpg" alt="くわタブレット（15%OFFクーポン対象・1,620円）" width="900" height="1350" loading="lazy"></a>
+        <a class="lcard" href="https://item.rakuten.co.jp/danjiki-dojo/0001/" target="_blank" rel="noopener"><img src="images/lineup/07.jpg" alt="優光泉 スタンダード・梅 600ml×2本（15%OFFクーポン対象・7,992円）" width="900" height="1350" loading="lazy"></a>
+        <a class="lcard" href="https://item.rakuten.co.jp/danjiki-dojo/7002/" target="_blank" rel="noopener"><img src="images/lineup/08.jpg" alt="優光泉 ミカン 600ml×2本（15%OFFクーポン対象・9,180円）" width="900" height="1350" loading="lazy"></a>
+        <a class="lcard" href="https://item.rakuten.co.jp/danjiki-dojo/0064/" target="_blank" rel="noopener"><img src="images/lineup/09.jpg" alt="優光泉 ザクローズ 600ml×2本（15%OFFクーポン対象・7,992円）" width="900" height="1350" loading="lazy"></a>
+        <a class="lcard" href="https://item.rakuten.co.jp/danjiki-dojo/0037_2/" target="_blank" rel="noopener"><img src="images/lineup/10.jpg" alt="優光泉 濃縮発酵和漢ドリンク 600ml×2本（15%OFFクーポン対象・9,180円）" width="900" height="1350" loading="lazy"></a>
+        <a class="lcard" href="https://item.rakuten.co.jp/danjiki-dojo/0002/" target="_blank" rel="noopener"><img src="images/lineup/11.jpg" alt="ポケット優光泉 16時間ダイエットセット 20ml×15包（20%OFFクーポン対象・2,916円）" width="900" height="1350" loading="lazy"></a>
+        <a class="lcard" href="https://item.rakuten.co.jp/danjiki-dojo/0058/" target="_blank" rel="noopener"><img src="images/lineup/12.jpg" alt="ポケット優光泉 ザクローズ 20ml×15包（20%OFFクーポン対象・2,916円）" width="900" height="1350" loading="lazy"></a>
+        <a class="lcard" href="https://item.rakuten.co.jp/danjiki-dojo/0046/" target="_blank" rel="noopener"><img src="images/lineup/13.jpg" alt="ポケット優光泉 濃縮発酵和漢ドリンク 20ml×15包（20%OFFクーポン対象・2,916円）" width="900" height="1350" loading="lazy"></a>
+      </div>
+
+      <p class="lnote">
+        ※ 定期購入はクーポン対象外です。<br>
+        ※ セール期間はご注文をたくさん頂く為、お届けまでにお時間を頂く場合があります。予めご了承ください。
+      </p>
+    </div>
+  </section>
+
   <!-- ================= 結び ================= -->
   <footer class="closing">
     <div class="inner reveal">
@@ -444,8 +485,6 @@
       </div>
       <p class="fine">
         ※ 各クーポンの対象商品・利用条件・上限・在庫は、楽天のクーポンページおよび商品ページをご確認ください。<br>
-        ※ 定期購入はポイント・クーポンの対象外です。<br>
-        ※ SALE期間はご注文を多くいただくため、お届けまでにお時間をいただく場合があります。<br>
         断食道場SHOP｜楽天スーパーSALE クーポンカレンダー
       </p>
     </div>
