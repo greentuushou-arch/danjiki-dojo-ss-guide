@@ -65,10 +65,11 @@
   /* ================= FV ================= */
   .fv{ padding:0; background:var(--pink); color:#fff; text-align:center; }
   .fv-img{ width:100%; display:block; margin:0; }
-  .fv .note{
-    margin:0; padding:16px 20px 20px;
-    font-size:15.5px; font-weight:700; color:#fff; line-height:1.7;
-  }
+
+  /* ================= あいさつ ================= */
+  .greet{ background:var(--cream); color:var(--ink); padding:46px 0 42px; text-align:center; }
+  .greet p{ margin:0 auto; max-width:24em; font-size:clamp(15.5px,4vw,17px); font-weight:500; line-height:2.05; }
+  .greet p + p{ margin-top:1em; }
 
   /* ================= カレンダー（画像＋日付ストリップ＋一覧） ================= */
   .calsec{ background:var(--yellow-soft); color:var(--ink); padding:56px 0 54px; text-align:center; }
@@ -288,8 +289,16 @@
   <!-- ================= FV ================= -->
   <header class="fv">
     <img class="fv-img" src="images/fv-banner.jpg" alt="楽天スーパーSALE 9/4 fri 20:00 - 9/11 fri 01:59 ファスティング始めるなら今！ 断食道場SHOP 9日間のSALEカレンダー" width="1400" height="1284">
-    <p class="note">※ サブローの日 限定福袋・一部クーポンは 9/3 から始まります。</p>
   </header>
+
+  <!-- ================= あいさつ ================= -->
+  <section class="greet">
+    <div class="inner reveal">
+      <p>こんにちは、断食道場SHOPです。<br>
+      楽天スーパーSALEは年に4回の特別イベントです♪</p>
+      <p>当店でも沢山のお得なイベント・クーポンをご用意しております。ぜひお楽しみください。</p>
+    </div>
+  </section>
 
   <!-- ================= カレンダー ================= -->
   <section class="calsec" id="calendar" aria-label="SALEカレンダー">
